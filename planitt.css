@@ -1,7 +1,9 @@
-  :root {
+:root {
     --box-shadow: 0 4px 3px rgba(0, 0, 0, 0.4), 0 8px 13px 5px rgba(0, 0, 0, 0.3),
       0 18px 23px 15px rgba(0, 0, 0, 0.2);
-  }
+    --logo-width: 140px; 
+    --logo-font-size: 36px;
+}
 
 * {
     padding: 0;
@@ -15,14 +17,17 @@ html, body {
 #landing-animation {
     height: 100%;
     width: 100%;
-    background: #000000;
+    background: #9E1B38;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(45deg, #434343, #000000);
+    background: -webkit-linear-gradient(45deg, #9E1B38, #F05350 );
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(45deg, #434343, #000000);
+    background: linear-gradient(45deg, #9E1B38, #F05350 );
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;;
 }
 
 .logo {
@@ -30,46 +35,90 @@ html, body {
     grid-template-columns: 1.8fr 1fr;
     overflow: hidden;
     border-radius: 0%;
-    height: auto;
-    width: 150px;
+    height: 42px;
+    width: var(--logo-width);
     align-items: center;
-    animation: scale 450ms linear;
+    animation: scale 500ms forwards linear;
+}
+
+.roof, .floor {
+    position: relative;
+    border: 1.5px solid #101010;
+    opacity: 0;
+    width: 0%;
+    animation: expand 1500ms forwards ease;
+    animation-delay: 500ms;
+}
+
+@keyframes expand {
+    25% {
+        width: var(--logo-width);
+        opacity: 1;
+    }
+    75%{
+        width: var(--logo-width);
+        opacity: 1;
+    }
+    100% {
+        width: 0;
+        opacity: 0;
+    }
+
 }
 
 .logo p {
     font-family: 'Libre Baskerville', serif;
     position: relative;
-    font-size: 2.5em;
+    font-size: var(--logo-font-size);
+    overflow: hidden;
+    line-height: 60px;
 }
 
 .logo p:nth-of-type(1) {
     color: white;
     text-align: right;
-    animation: slideLeft 400ms forwards ease;
+    animation: slideRight 2s forwards ease, slideUp forwards 2s ease;
 }
 
 .logo p:nth-of-type(2) {
-    animation: slideRight 400ms forwards ease;
-}
-
-@keyframes slideLeft {
-    from {
-        left: -100%
-    }
-    to {
-        left: 0;
-    }
+    animation: slideLeft 2s forwards ease, slideDown forwards 2s ease;
 }
 
 @keyframes slideRight {
     from {
-        right: -100%
+        left: -100%
     }
-    to {
+    25% {
+        left: 0;
+    }
+}
+
+@keyframes slideUp {
+    60% {
+        top: 0;
+    }
+    100% {
+        top: -300%;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        right: -100%; 
+    }
+    25% {
         right: 0;
     }
 }
 
+@keyframes slideDown {
+    60% {
+        bottom: 0;
+    }
+    100% {
+        bottom: -300%;
+    }
+}
 
 @keyframes scale {
     from {
@@ -78,4 +127,10 @@ html, body {
     to {
         transform: scale(1.0);
     }
+}
+
+#message {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
 }

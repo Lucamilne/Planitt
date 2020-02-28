@@ -1,3 +1,1 @@
-$("#landing-animation").click(function () {
-    $(this).fadeOut("slow");
-})
+$("#landing-animation").delay(2000).slideUp();
