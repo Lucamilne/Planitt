@@ -1,8 +1,14 @@
 :root {
     --box-shadow: 0 4px 3px rgba(0, 0, 0, 0.4), 0 8px 13px 5px rgba(0, 0, 0, 0.3),
       0 18px 23px 15px rgba(0, 0, 0, 0.2);
-    --logo-width: 140px; 
+    --logo-width: 140px;
+    --logo-height: 45px;
     --logo-font-size: 36px;
+    --color1: #fff;
+    --color2: #DFF0EA;
+    --color3: #95ADBE;
+    --color4: #574F7D;
+    --color5: #4F3A65;
 }
 
 * {
@@ -14,20 +20,21 @@ html, body {
     height: 100%;
 }
 
+body {
+    background-color: var(--color2);
+}
+
 #landing-animation {
+    position: absolute;
     height: 100%;
     width: 100%;
-    background: #9E1B38;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(45deg, #9E1B38, #F05350 );
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(45deg, #9E1B38, #F05350 );
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #F48256;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .logo {
@@ -35,7 +42,7 @@ html, body {
     grid-template-columns: 1.8fr 1fr;
     overflow: hidden;
     border-radius: 0%;
-    height: 42px;
+    height: var(--logo-height);
     width: var(--logo-width);
     align-items: center;
     animation: scale 500ms forwards linear;
@@ -43,7 +50,7 @@ html, body {
 
 .roof, .floor {
     position: relative;
-    border: 1.5px solid #101010;
+    border: 1px solid #101010;
     opacity: 0;
     width: 0%;
     animation: expand 1500ms forwards ease;
@@ -95,16 +102,16 @@ html, body {
 
 @keyframes slideUp {
     60% {
-        top: 0;
+        transform: translate(0, 0);
     }
     100% {
-        top: -300%;
+        transform: translate(0, -300%);
     }
 }
 
 @keyframes slideLeft {
     from {
-        right: -100%; 
+        right: -100%
     }
     25% {
         right: 0;
@@ -113,10 +120,10 @@ html, body {
 
 @keyframes slideDown {
     60% {
-        bottom: 0;
+        transform: translate(0, 0);
     }
     100% {
-        bottom: -300%;
+        transform: translate(0, 300%);
     }
 }
 
@@ -129,8 +136,89 @@ html, body {
     }
 }
 
-#message {
-    font-size: 60px;
+main {
+    height: 100%;
+}
+.slider {
+    height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.slides {
+    width: 60vmin;
+    height: 60vmin;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides .slide {
+    position: absolute;
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    animation: slide 1s forwards ease;
+    animation-delay: 2500ms;
+    transform: translate(0, -100%);
+    visibility: hidden;
+}
+
+#slide-1 {
+    background-color: var(--color3);
+    animation-delay: 3000ms;
+}
+
+#slide-2 {
+    background-color:var(--color4);
+    animation-delay: 4000ms;
+}
+
+#slide-3 {
+    background-color: var(--color5);
+    animation-delay: 5000ms;
+}
+
+@keyframes slide {
+    to {
+        visibility: visible;
+        transform: translate(0, 0);
+    }
+}
+
+.rolling-text {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    color: white;
+    font-size: 6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.rolling-text p {
+    transform: translate(0, 200%);
+    animation: roll 3000ms forwards ease;
+    animation-delay: 3000ms;
+    line-height: 2em;
+    position: relative;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 5px;
+}
+
+@keyframes roll {
+    33% {
+        transform: translate(0, 100%)
+    }
+    66% {
+        transform: translate(0, 0)
+    }
+    100% {
+        transform: translate(0, -100%)
+    }
 }
