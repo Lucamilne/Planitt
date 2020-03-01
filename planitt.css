@@ -29,7 +29,7 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: var(--color4);
+    background-color: var(--color1);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,7 +83,7 @@ body {
 }
 
 .logo p:nth-of-type(1) {
-    color: var(--color1);
+    font-weight: bold;
     text-align: right;
     animation: slideRight 2s forwards ease, slideUp forwards 2s ease;
 }
@@ -153,6 +153,7 @@ main {
     height: 80vmin;
     overflow: hidden;
     position: relative;
+    border-radius: 1px;
 }
 
 .slides .slide {
@@ -162,7 +163,7 @@ main {
     background-position: center;
     height: 100%;
     width: 100%;
-    animation: slide 1s forwards ease;
+    animation: slide 900ms forwards ease;
     transform: translate(0, -100%);
     visibility: hidden;
 }
@@ -171,21 +172,20 @@ main {
     background-image: url("./img/temp1.jpg");
     background-position: center;
     background-size: cover;
-    animation-delay: 1000ms;
 }
 
 #slide-2 {
     background-image: url("./img/temp2.jpg");
     background-position: center;
     background-size: cover;
-    animation-delay: 2000ms;
+    animation-delay: 1000ms;
 }
 
 #slide-3 {
     background-image: url("./img/temp3.jpg");
     background-position: center;
     background-size: cover;
-    animation-delay: 3000ms;
+    animation-delay: 2000ms;
 }
 
 @keyframes slide {
@@ -206,13 +206,12 @@ main {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    text-shadow: 4px 4px 0px rgba(0,0,0,0.4);
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.6);
 }
 
 .rolling-text p {
     transform: translate(0, 200%);
     animation: roll 3000ms forwards ease;
-    animation-delay: 1000ms;
     line-height: 2em;
     position: relative;
     font-family: 'Abril Fatface', cursive;
