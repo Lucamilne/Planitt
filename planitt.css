@@ -4,7 +4,7 @@
     --logo-width: 140px;
     --logo-height: 45px;
     --logo-font-size: 36px;
-    --color1: #fff;
+    --color1: #eee;
     --color2: #DFF0EA;
     --color3: #95ADBE;
     --color4: #574F7D;
@@ -21,14 +21,15 @@ html, body {
 }
 
 body {
-    background-color: var(--color2);
+    background-color: var(--color3);
+    font-family: 'Montserrat', sans-serif;
 }
 
 #landing-animation {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #F48256;
+    background-color: var(--color4);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +51,7 @@ body {
 
 .roof, .floor {
     position: relative;
-    border: 1px solid #101010;
+    border: 1px solid #222;
     opacity: 0;
     width: 0%;
     animation: expand 1500ms forwards ease;
@@ -82,7 +83,7 @@ body {
 }
 
 .logo p:nth-of-type(1) {
-    color: white;
+    color: var(--color1);
     text-align: right;
     animation: slideRight 2s forwards ease, slideUp forwards 2s ease;
 }
@@ -138,6 +139,7 @@ body {
 
 main {
     height: 100%;
+    display: none;
 }
 .slider {
     height: 100%;
@@ -147,8 +149,8 @@ main {
 }
 
 .slides {
-    width: 60vmin;
-    height: 60vmin;
+    width: 80vmin;
+    height: 80vmin;
     overflow: hidden;
     position: relative;
 }
@@ -161,24 +163,29 @@ main {
     height: 100%;
     width: 100%;
     animation: slide 1s forwards ease;
-    animation-delay: 2500ms;
     transform: translate(0, -100%);
     visibility: hidden;
 }
 
 #slide-1 {
-    background-color: var(--color3);
-    animation-delay: 3000ms;
+    background-image: url("./img/temp1.jpg");
+    background-position: center;
+    background-size: cover;
+    animation-delay: 1000ms;
 }
 
 #slide-2 {
-    background-color:var(--color4);
-    animation-delay: 4000ms;
+    background-image: url("./img/temp2.jpg");
+    background-position: center;
+    background-size: cover;
+    animation-delay: 2000ms;
 }
 
 #slide-3 {
-    background-color: var(--color5);
-    animation-delay: 5000ms;
+    background-image: url("./img/temp3.jpg");
+    background-position: center;
+    background-size: cover;
+    animation-delay: 3000ms;
 }
 
 @keyframes slide {
@@ -192,19 +199,20 @@ main {
     position: absolute;
     width: 100%;
     height: 20%;
-    color: white;
+    color: #fff;
     font-size: 6em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.4);
 }
 
 .rolling-text p {
     transform: translate(0, 200%);
     animation: roll 3000ms forwards ease;
-    animation-delay: 3000ms;
+    animation-delay: 1000ms;
     line-height: 2em;
     position: relative;
     font-family: 'Abril Fatface', cursive;
@@ -219,6 +227,89 @@ main {
         transform: translate(0, 0)
     }
     100% {
-        transform: translate(0, -100%)
+        transform: translate(0, -100%);
     }
+}
+
+li, a, button {
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--color1);
+    text-decoration: none;
+}
+
+header {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 5%;
+    text-transform: uppercase;
+}
+
+.branding {
+    cursor: pointer;
+    width: 100px;
+    margin-right: auto;
+}
+
+.links {
+    list-style: none;
+}
+
+.links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.links li a {
+    transition: all 0.3s ease 0s;
+    color: #222;
+}
+
+.links li a:hover {
+    color: var(--color1);
+}
+
+button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    border: 1px solid var(--color1);
+    border-radius: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    text-transform: inherit;
+}
+
+button:hover {
+    color: #222;
+    background-color: var(--color1);
+    opacity: 0.8;
+}
+
+section hr {
+    width: 40px;
+    border: 1px solid;
+    margin: 20px 0px;
+}
+
+section h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+section {
+    padding: 20px;
+    padding-top: 40px;
+}
+
+#article-1 {
+    background-color: var(--color1);
+    color: #222;
 }
