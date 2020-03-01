@@ -16,6 +16,16 @@
     margin: 0;
 }
 
+::-moz-selection {
+    color: #222;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+::selection {
+    color: #222;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
 html, body {
     height: 100%;
 }
@@ -166,25 +176,21 @@ main {
     animation: slide 900ms forwards ease;
     transform: translate(0, -100%);
     visibility: hidden;
+    background-position: center;
+    background-size: cover;
 }
 
 #slide-1 {
     background-image: url("./img/temp1.jpg");
-    background-position: center;
-    background-size: cover;
 }
 
 #slide-2 {
     background-image: url("./img/temp2.jpg");
-    background-position: center;
-    background-size: cover;
     animation-delay: 1000ms;
 }
 
 #slide-3 {
     background-image: url("./img/temp3.jpg");
-    background-position: center;
-    background-size: cover;
     animation-delay: 2000ms;
 }
 
@@ -245,6 +251,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding: 30px 5%;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
@@ -280,6 +287,7 @@ button {
     background-color: transparent;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    letter-spacing: inherit;
     text-transform: inherit;
 }
 
