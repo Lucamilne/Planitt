@@ -8,8 +8,8 @@
     --color2: #DFF0EA;
     --color3: #95ADBE;
     --color3b: #c7c8ce;
-    --color4: #574F7D;
-    --color5: #4F3A65;
+    --color4: #393e46;
+    --color5: #222831;
 }
 
 * {
@@ -28,7 +28,7 @@ html, body {
 }
 
 body {
-    background-color: var(--color3);
+    background-color: var(--color4);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -172,13 +172,12 @@ main {
     background-size: 300px;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     height: 100%;
     width: 100%;
     animation: slide 900ms forwards ease;
     transform: translate(0, -100%);
     visibility: hidden;
-    background-position: center;
-    background-size: cover;
 }
 
 #slide-1 {
@@ -205,7 +204,7 @@ main {
 .rolling-text {
     position: absolute;
     width: 100%;
-    height: 20%;
+    height: 15vh;
     color: #fff;
     font-size: 10vh;
     display: flex;
@@ -213,17 +212,17 @@ main {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    text-shadow: 2px 2px 0px rgba(0,0,0,0.75);
+    text-shadow: 2px 2px 0px var(--color5);
 }
 
 .rolling-text p {
     will-change: transform;
     transform: translate(0, 200%);
     animation: roll 3000ms forwards ease;
-    line-height: 2em;
+    line-height: 3em;
     position: relative;
     font-family: 'Abril Fatface', cursive;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
 }
 
 @keyframes roll {
@@ -328,12 +327,11 @@ nav {
 }
 
 .links li a:hover {
-    color: #fff;
+    color: var(--color3);
 }
 
-header button {
+header button, #article-2 button {
     font-size: 1.2rem;
-    margin-left: 20px;
     padding: 9px 25px;
     border: 1px solid #fff;
     border-radius: 50px;
@@ -368,17 +366,20 @@ section h3 {
 section {
     box-sizing: border-box;
     padding: 20px;
-    padding-top: 148px; 
-    height: 100%;
+    /* padding-top: 148px;  */
+    height: auto;
 }
 
 section p {
     font-size: 1rem;
+    margin-bottom: 30px;
 }
 
 #article-1 {
-    background-color: var(--color1);
+    box-sizing: border-box;
+    background-color: #eee;
     color: #222;
+    padding: 16vw;
 }
 
 #article-1 button {
@@ -387,12 +388,40 @@ section p {
     font-weight: 500;
     border: 1px solid #222;
     color: #222;
-    margin: 30px auto;
     text-transform: uppercase;
     letter-spacing: 1px;
+    background-color: inherit;
 }
 
 #article-1 button:hover {
     background-color: #111;
     color: var(--color1);
+}
+
+#article-2 {
+    padding: 0;
+    height: 68%;
+    width: 100%;
+    background-image: url("./img/meet.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#article-2 .overlay {
+    box-sizing: border-box;
+    padding: 16vw;
+    height: 100%;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#article-2 button {
+    color: #222;
+    background-color: #fff;
 }

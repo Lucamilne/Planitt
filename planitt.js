@@ -7,7 +7,6 @@ $("main").delay(3000).fadeIn();
 
 rollingText.addEventListener("animationend", function() {
     document.getElementById("article-1").scrollIntoView();
-    // $(".rolling-text p").fadeOut();
 })
 
 $(".branded-menu").click(function() {

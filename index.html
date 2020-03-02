@@ -1,72 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planitt.</title>
+    <style></style>
+    <script src="./libs/jQuery/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2691de35e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
+      @import url('https://fonts.googleapis.com/css?family=Codystar|Josefin+Slab&display=swap'); 
+      @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Yantramanav&display=swap");
+    </style>
+    <link rel="stylesheet" type="text/css" href="./planitt.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Planitt.</title>
-  <style>
-    @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
-  </style>
-  <script src="./libs/jQuery/jquery-3.4.1.min.js"></script>
-  <script src="https://kit.fontawesome.com/2691de35e3.js" crossorigin="anonymous"></script>
-  <style>
-    @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat&display=swap");
-    @import url('https://fonts.googleapis.com/css?family=Yantramanav&display=swap');
-  </style>
-  <link rel="stylesheet" type="text/css" href="./planitt.css" />
-</head>
-
-<body>
-  <div id="landing-animation">
-    <div class="roof"></div>
-    <div class="logo">
-      <p>Plan</p>
-      <p>itt.</p>
+  <body>
+    <div id="landing-animation">
+      <div class="roof"></div>
+      <div class="logo">
+        <p>Plan</p>
+        <p>itt.</p>
+      </div>
+      <div class="floor"></div>
     </div>
-    <div class="floor"></div>
-  </div>
-  <main>
-    <header>
-      <div class="branded-menu">
-        <div class="branding"><strong>Plan</strong>itt</div>
-        <i class="fas fa-bars"></i>
+    <main>
+      <header>
+        <div class="branded-menu">
+          <div class="branding"><strong>Plan</strong>itt</div>
+          <i class="fas fa-bars"></i>
+        </div>
+        <a class="contact" href="#">
+          <button>
+            Contact
+          </button></a
+        >
+      </header>
+      <nav>
+        <ul class="links">
+          <li><a href="#">Process</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Gallery</a></li>
+        </ul>
+      </nav>
+      <div class="slider">
+        <div class="slides">
+          <div class="slide" id="slide-1"></div>
+          <div class="slide" id="slide-2"></div>
+          <div class="slide" id="slide-3"></div>
+        </div>
+        <div class="rolling-text">
+          <p>Ideas</p>
+          <p>Made</p>
+          <p>Reality</p>
+        </div>
       </div>
-      <a class="contact" href="#"><button>Contact</button></a>
-    </header>
-    <nav>
-      <ul class="links">
-        <li><a href="#">Process</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-      </ul>
-    </nav>
-    <div class="slider">
-      <div class="slides">
-        <div class="slide" id="slide-1"></div>
-        <div class="slide" id="slide-2"></div>
-        <div class="slide" id="slide-3"></div>
-      </div>
-      <div class="rolling-text">
-        <p>Ideas</p>
-        <p>Made</p>
-        <p>Reality</p>
-      </div>
-    </div>
-    <section id="article-1">
-      <h3>Fitted Kitchens</h3>
-      <hr />
-      <p>
-        Browse our range of styles to find something that suits you. Whether
-        you prefer a timeless classic with contemporary ironmongery or a bold
-        modern design, we've got something to offer.
-      </p>
-      <button>Which kitchen suits you?</button>
-    </section>
-  </main>
-  <script src="./planitt.js"></script>
-</body>
-
+      <section id="article-1">
+        <h3>Fitted Kitchens</h3>
+        <hr />
+        <p>
+          Browse our range of styles to find something that suits you. Whether
+          you prefer a timeless classic with contemporary ironmongery or a bold
+          modern design, we've got something to offer.
+        </p>
+          <button>Choose your kitchen</button>
+      </section>
+      <section id="article-2">
+        <div class="overlay">
+          <h3>Book a free consultation</h3>
+          <hr />
+          <p>
+            Let's talk through your requirements with a free, no obligation
+            consultation.
+          </p>
+          <button>
+            Book
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="./planitt.js"></script>
+  </body>
 </html>
 
 <!-- img scaling used -->
