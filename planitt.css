@@ -365,21 +365,21 @@ section h3 {
 
 section {
     box-sizing: border-box;
-    padding: 20px;
-    /* padding-top: 148px;  */
     height: auto;
+    padding: 10vw;
+    box-sizing: border-box;
+    background-color: #eee;
+    color: #222;
 }
 
 section p {
     font-size: 1rem;
     margin-bottom: 30px;
+    line-height: 1.5rem;
 }
 
 #article-1 {
-    box-sizing: border-box;
-    background-color: #eee;
-    color: #222;
-    padding: 16vw;
+    height: 50%;
 }
 
 #article-1 button {
@@ -398,9 +398,56 @@ section p {
     color: var(--color1);
 }
 
+.kitchen-selector {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px
+}
+
+.kitchen-selector .column {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    box-sizing: inherit;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.column label {
+    position: absolute;
+    text-transform: uppercase;
+    background-color: var(--color1);
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    padding-bottom: 0px
+}
+
+.column:nth-of-type(1) {
+    background-image: url("./img/temp1.jpg");
+}
+
+.column:nth-of-type(2) {
+    background-image: url("./img/temp2.jpg");
+}
+
+.column:nth-of-type(3) {
+    background-image: url("./img/temp3.jpg");
+}
+
+.column:nth-of-type(4) {
+    background-image: url("./img/temp4.jpg");
+}
+
+
 #article-2 {
     padding: 0;
-    height: 68%;
+    height: 50%;
     width: 100%;
     background-image: url("./img/meet.jpg");
     background-repeat: no-repeat;
@@ -410,7 +457,7 @@ section p {
 
 #article-2 .overlay {
     box-sizing: border-box;
-    padding: 16vw;
+    padding: 10vw;
     height: 100%;
     color: #eee;
     display: flex;
@@ -421,7 +468,13 @@ section p {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.overlay p {
+    margin: 0px 20%;
+}
+
 #article-2 button {
     color: #222;
     background-color: #fff;
+    margin: 20px 0px;
 }
+
