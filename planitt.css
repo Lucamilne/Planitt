@@ -379,7 +379,7 @@ section p {
 }
 
 #article-1 {
-    height: 50%;
+    height: auto;
 }
 
 #article-1 button {
@@ -403,7 +403,7 @@ section p {
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px
 }
 
@@ -447,7 +447,7 @@ section p {
 
 #article-2 {
     padding: 0;
-    height: 50%;
+    height: auto;
     width: 100%;
     background-image: url("./img/meet.jpg");
     background-repeat: no-repeat;
@@ -478,3 +478,41 @@ section p {
     margin: 20px 0px;
 }
 
+#article-4 {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--color5);
+    color: #eee;
+}
+
+#article-4 h3 {
+    position: absolute;
+    display: table;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color5);
+    z-index: 1;
+    padding: 0px 20px;
+}
+
+#article-4 .wrapper {
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid #eee;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.wrapper p {
+    margin: 0px 20%;
+    font-size: 0.8rem;
+    line-height: 1.5em;
+}
+
+.wrapper i {
+    font-size: 3rem;
+    margin: 20px;
+}
