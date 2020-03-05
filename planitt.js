@@ -10,9 +10,9 @@ function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
 }
 
-rollingText.addEventListener("animationend", function() {
-    document.getElementById("product-styles").scrollIntoView();
-})
+// rollingText.addEventListener("animationend", function() {
+//     document.getElementById("our-service").scrollIntoView();
+// })
 
 $(".branded-menu").click(function() {
     $("nav").toggleClass("toggle-nav")
@@ -58,8 +58,7 @@ function isScrolledIntoView(elem) {
 $(window).scroll(function () {
     $('.step').each(function () {
         if (isScrolledIntoView(this) === true) {
-            $(this).addClass('slideAnimation');
+            $(this).addClass('opacity');
         }
     });
-
 });

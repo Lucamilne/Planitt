@@ -4,7 +4,7 @@
   --box-shadow-inset: inset 0 4px 3px rgba(0, 0, 0, 0.3),
     inset 0 8px 13px 5px rgba(0, 0, 0, 0.2),
     inset 0 18px 23px 15px rgba(0, 0, 0, 0.1);
-  --logo-width: 140px;
+  --logo-width: 100px;
   --logo-height: 45px;
   --logo-font-size: 36px;
   --color1: #eee;
@@ -31,7 +31,7 @@ body {
 }
 
 body {
-  background-color: var(--color5);
+  background: linear-gradient(45deg, #242b34, #1f242c);
   font-family: "Montserrat", sans-serif;
   transition: background-color 250ms ease;
 }
@@ -54,7 +54,7 @@ body {
   grid-template-columns: 1.8fr 1fr;
   overflow: hidden;
   border-radius: 0%;
-  height: var(--logo-height);
+  height: 2rem;
   width: var(--logo-width);
   align-items: center;
   animation: scale 500ms forwards linear;
@@ -86,11 +86,11 @@ body {
 }
 
 .logo p {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Yantramanav", serif;
   position: relative;
-  font-size: var(--logo-font-size);
+  font-size: 2rem;
   overflow: hidden;
-  line-height: 60px;
+  line-height: 2rem;
 }
 
 .logo p:nth-of-type(1) {
@@ -149,19 +149,18 @@ body {
 }
 
 main {
-  height: 100%;
   display: none;
 }
 .slider {
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .slides {
-  width: 75vmin;
-  height: 75vmin;
+  width: 85vmin;
+  height: 85vmin;
   overflow: hidden;
   position: relative;
   border-radius: 1px;
@@ -217,7 +216,7 @@ main {
 .rolling-text p {
   transform: translate(0, 200%);
   animation: roll 3000ms forwards ease;
-  line-height: 3em;
+  line-height: 2em;
   position: relative;
   font-family: "Abril Fatface", cursive;
   letter-spacing: 3px;
@@ -280,7 +279,7 @@ header {
   color: inherit;
 }
 
-.branding span {
+.branding strong {
   font-weight: bold;
 }
 
@@ -359,7 +358,10 @@ section {
 
 section hr {
   width: 40px;
-  border: 1px solid;
+  height: 2px;
+  border: none;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
   margin: 20px 0px;
 }
 
@@ -377,6 +379,9 @@ section p {
   line-height: 1.5rem;
 }
 
+section i {
+  font-size: 2.5rem;
+}
 .kitchen-selector {
   box-sizing: border-box;
   width: 100%;
@@ -475,22 +480,26 @@ section .rounded-btn {
   text-align: center;
   background-color: var(--color5);
   color: #eee;
+  box-shadow: none;
 }
 
 #process h3 {
   position: absolute;
   font-size: 1.5rem;
-  top: 5px;
+  top: 7px;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: var(--color5);
-  padding: 0px 20px;
+  background-color: var(--color1);
+  color: var(--color5);
+  padding: 0px 10px;
+  box-shadow: var(--box-shadow);
+  border-radius: 2px;
 }
 
 #process h4 {
-  margin: 0 20px;
-  margin-bottom: 10px;
+  margin: 10px 0px;
   font-family: "Libre Baskerville", serif;
+  font-size: 1.5rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 400;
@@ -499,13 +508,16 @@ section .rounded-btn {
 #process .wrapper {
   position: relative;
   box-sizing: border-box;
-  border: 2px solid #eee;
-  width: 100%;
+  border: 4px double #eee;
+  max-width: 100%;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   overflow: hidden;
   padding: 20px;
+  background: linear-gradient(45deg, #242b34, #1f242c);
+  box-shadow:  11px -11px 22px #13161b, 
+               -11px 11px 22px #313a47;
 }
 
 #process .step {
@@ -513,14 +525,17 @@ section .rounded-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transform: translate(-100%, 0);
   opacity: 0;
-  transition: transform 500ms ease-out, opacity 500ms ease-out;
+  transition: opacity 1500ms ease;
+  width: 100%;
+
 }
 
 .wrapper p {
   font-size: 0.8rem;
-  line-height: 1.5em;
+  line-height: 1.5rem;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 .wrapper i {
@@ -528,7 +543,62 @@ section .rounded-btn {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.slideAnimation {
+.opacity {
   opacity: 1 !important;
-  transform: translate(0, 0) !important;
 }
+
+#our-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#our-service .branding {
+  font-size: 4rem;
+  overflow: hidden;
+}
+
+.slogan {
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#our-service p {
+  line-height: 2rem;
+}
+
+#contact-form-container {
+  box-sizing: border-box;
+  position: fixed;
+  background-color: #222;
+  color: #eee;
+  bottom: 0;
+  height: 100%;
+  padding-top: 108px;
+  padding-bottom: 5vw;
+}
+
+.field {
+  color: rgba(255,255,255,0.1);
+  width: 100%;
+  height: 13vw;
+}
+
+#contact-form .field input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-weight: 300;
+  transition: border 1s ease;
+  font-size: 4vw;
+  outline: none;
+  color: #eee;
+}
+
+#contact-form .field input:focus {
+  border-bottom: 1px solid #eee;#
+}
+
