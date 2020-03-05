@@ -255,7 +255,7 @@ header {
   background-color: transparent;
   cursor: pointer;
   transition: all 0.3s ease 0s;
-  letter-spacing: inherit;
+  letter-spacing: 2px;
   text-transform: inherit;
   text-decoration: none;
   color: #fff;
@@ -341,7 +341,7 @@ nav {
   color: var(--color3);
 }
 
-button:hover {
+.rounded-btn:hover {
   color: #222;
   background-color: #fff;
 }
@@ -553,7 +553,7 @@ section .rounded-btn {
   align-items: center;
 }
 
-#our-service .branding {
+#our-service .branding, #contact-form-container .branding {
   font-size: 4rem;
   overflow: hidden;
 }
@@ -571,34 +571,58 @@ section .rounded-btn {
 }
 
 #contact-form-container {
-  box-sizing: border-box;
   position: fixed;
+  box-sizing: border-box;
   background-color: #222;
   color: #eee;
   bottom: 0;
-  height: 100%;
-  padding-top: 108px;
-  padding-bottom: 5vw;
+  width: 100%;
+  padding: 10vw;
 }
 
 .field {
+  position: relative;
   color: rgba(255,255,255,0.1);
-  width: 100%;
-  height: 13vw;
+  height: auto;
 }
 
-#contact-form .field input {
+#contact-form .field input, textarea {
   background: none;
   border: none;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   font-weight: 300;
   transition: border 1s ease;
-  font-size: 4vw;
   outline: none;
   color: #eee;
+  width: 100%;
+  height: 12vw;
+  font-size: 4vw;
+  font-family: "Montserrat", sans-serif;
 }
 
-#contact-form .field input:focus {
-  border-bottom: 1px solid #eee;#
+#contact-form .field textarea {
+  resize: none;
+  height: 30vw;
+  margin-top: 4vw;
 }
 
+#contact-form .field span {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+#contact-form .field input:focus, textarea:focus {
+  border-bottom: 1px solid #eee;
+}
+
+#contact-form .rounded-btn {
+  background-color: #eee;
+  color: #222;
+  margin: 20px auto;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
