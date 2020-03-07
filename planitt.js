@@ -14,7 +14,7 @@ function scrollTo(hash) {
 //     document.getElementById("our-service").scrollIntoView();
 // })
 
-$(".branded-menu").click(function() {
+$(".branded-menu").click(function () {
     $("nav").toggleClass("toggle-nav")
     invertHeader();
     toggleMenuIcon();
@@ -31,13 +31,13 @@ function toggleMenuIcon() {
 
 
 //kitchen-selector :hover label highlighting
-$(".column").hover(function() {
+$(".column").hover(function () {
     $(this).children().css({
         "background-color": "rgba(255,255,255,0.5",
         "color": "#222",
         "transform": "translate(10px, 0)"
     })
-}, function() {
+}, function () {
     $(this).children().css({
         "background-color": "rgba(0, 0, 0, 0.3)",
         "color": "#eee",
@@ -62,3 +62,17 @@ $(window).scroll(function () {
         }
     });
 });
+
+//black magic
+
+$(".contact-icon i").hover(function () {
+    $(this).css({
+        "background-color": "#fff",
+        "color": "#222"
+    })
+}, function () {
+    $(this).css({
+        "background-color": "",
+        "color": "#fff"
+    })
+})
