@@ -311,7 +311,7 @@ nav {
 }
 
 .toggle-nav {
-  transform: translate(0, 0);
+  transform: translate(0, 0) !important;
 }
 
 .links {
@@ -376,7 +376,7 @@ section h3 {
 section p {
   font-size: 1rem;
   margin-bottom: 30px;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 section i {
@@ -397,6 +397,11 @@ section h6 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
 }
+
+.kitchen-selector div, .column {
+  overflow: hidden;
+}
+
 
 .kitchen-selector .column {
   position: relative;
@@ -586,6 +591,8 @@ section .rounded-btn {
   bottom: 0;
   width: 100%;
   padding: 10vw;
+  transform: translate(0, 100%);
+  transition: transform 300ms ease;
 }
 
 .field {
@@ -632,7 +639,8 @@ section .rounded-btn {
 
 .container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 #media-bar {
@@ -643,6 +651,7 @@ section .rounded-btn {
   justify-content: center;
   color: #fff;
   margin-bottom: 20px;
+  z-index: 1;
 }
 
 .contact-icon {
@@ -674,3 +683,37 @@ section .rounded-btn {
   border-radius: 0px 30px 30px 0px;
 }
 
+footer {
+  box-sizing: border-box;
+  position: relative;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.68fr;
+  background-color: var(--color1);
+  color: #222;
+  background-color: #222;
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+  border: 2px solid #eee;
+}
+
+footer .branding {
+  font-size: 3rem;  
+  line-height: 2rem;
+  color: #eee;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+footer p {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 20px;
+  background-color: #eee;
+  box-shadow: var(--box-shadow-inset);
+  width: 100%;
+  border-left: 2px solid #eee;
+}

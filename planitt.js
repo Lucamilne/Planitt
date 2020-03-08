@@ -20,6 +20,10 @@ $(".branded-menu").click(function () {
     toggleMenuIcon();
 })
 
+$(".contact").click(function () {
+    $("#contact-form-container").toggleClass("toggle-nav")
+})
+
 function invertHeader() {
     $(".branded-menu").toggleClass("invert")
     $("header button").toggleClass("invert-button")
@@ -63,14 +67,16 @@ $(window).scroll(function () {
     });
 });
 
-//black magic
+//media bar hover effect
 
 $(".contact-icon i").hover(function () {
+    //mouse in
     $(this).css({
         "background-color": "#fff",
         "color": "#222"
     })
 }, function () {
+    //mouse out
     $(this).css({
         "background-color": "",
         "color": "#fff"
