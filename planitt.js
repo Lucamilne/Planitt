@@ -10,9 +10,9 @@ function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
 }
 
-// rollingText.addEventListener("animationend", function() {
-//     document.getElementById("our-service").scrollIntoView();
-// })
+rollingText.addEventListener("animationend", function() {
+    $(".slider").slideUp("slow");
+})
 
 $(".branded-menu").click(function () {
     $("nav").toggleClass("toggle-nav")
@@ -20,8 +20,13 @@ $(".branded-menu").click(function () {
     toggleMenuIcon();
 })
 
+function toggleMediaBar() {
+    $("#media-bar").fadeToggle();
+}
+
 $(".contact").click(function () {
     $("#contact-form-container").toggleClass("toggle-nav")
+    toggleMediaBar()
 })
 
 function invertHeader() {
@@ -49,6 +54,7 @@ $(".column").hover(function () {
     })
 })
 
+//scroll into view animation triggering
 function isScrolledIntoView(elem) {
     var docViewTop = $(window).scrollTop();
     var docViewBottom = docViewTop + $(window).height();
@@ -62,7 +68,7 @@ function isScrolledIntoView(elem) {
 $(window).scroll(function () {
     $('.step').each(function () {
         if (isScrolledIntoView(this) === true) {
-            $(this).addClass('opacity');
+            $(this).addClass('step-animation');
         }
     });
 });
