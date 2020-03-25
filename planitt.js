@@ -4,21 +4,31 @@ const body = document.body;
 
 $("#landing-animation").delay(2000).slideUp(600);
 
-$("main").delay(3000).fadeIn();
+// $("main").delay(3000).fadeIn("slow");
+
 
 function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
 }
 
-rollingText.addEventListener("animationend", function() {
-    $(".slider").slideUp("slow");
-})
+// rollingText.addEventListener("animationend", function() {
+//     $(".slider").slideUp("slow");
+// })
 
+
+//toggle nav menu
 $(".branded-menu").click(function () {
     $("nav").toggleClass("toggle-nav")
     invertHeader();
     toggleMenuIcon();
 })
+
+//cancel nav menu if filter is clicked. needs refinement. .one("click") et,.c
+$("#filter").click(function () {
+    $("nav").toggleClass("toggle-nav");
+    invertHeader();
+    toggleMenuIcon();
+}).fadeOut();
 
 function toggleMediaBar() {
     $("#media-bar").fadeToggle();
@@ -36,6 +46,8 @@ function invertHeader() {
 
 function toggleMenuIcon() {
     $(".branded-menu i").toggleClass("fa-bars fa-times")
+    //toggles filter on menu dropdown
+    $("#filter").fadeToggle("fast");
 }
 
 

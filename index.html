@@ -1,248 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planitt.</title>
+    <style></style>
+    <script src="./libs/jQuery/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2691de35e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
+      @import url("https://fonts.googleapis.com/css?family=Codystar|Josefin+Slab&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat&display=swap");
+      @import url("https://fonts.googleapis.com/css?family=Yantramanav&display=swap");
+    </style>
+    <link rel="stylesheet" type="text/css" href="./planitt.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Planitt.</title>
-  <style></style>
-  <script src="./libs/jQuery/jquery-3.4.1.min.js"></script>
-  <script src="https://kit.fontawesome.com/2691de35e3.js" crossorigin="anonymous"></script>
-  <style>
-    @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
-    @import url("https://fonts.googleapis.com/css?family=Codystar|Josefin+Slab&display=swap");
-    @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat&display=swap");
-    @import url("https://fonts.googleapis.com/css?family=Yantramanav&display=swap");
-  </style>
-  <link rel="stylesheet" type="text/css" href="./planitt.css" />
-</head>
+  <body>
+    <div id="landing-animation">
+      <div class="roof"></div>
+      <div class="logo">
+        <p>Plan</p>
+        <p>itt.</p>
+      </div>
+      <div class="floor"></div>
+    </div>
+    <header>
+      <div class="branded-menu">
+        <div class="branding"><strong>Plan</strong>itt</div>
+        <i class="fas fa-bars"></i>
+      </div>
+      <a class="contact" href="#">
+        <button class="rounded-btn">
+          Contact
+        </button></a
+      >
+    </header>
+    <nav>
+      <ul class="links">
+        <li><a href="#">Process</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+      </ul>
+    </nav>
+    <div id="filter">
+    </div>
+    <main>
+      <!-- <div class="slider">
+        <div class="slides">
+          <div class="slide" id="slide-1"></div>
+          <div class="slide" id="slide-2"></div>
+          <div class="slide" id="slide-3"></div>
+        </div>
+        <div class="rolling-text">
+          <p>Bringing</p>
+          <p>Ideas</p>
+          <p>To Life.</p>
+        </div>
+      </div> -->
+      <div class="index-container">
+        <div class="hero grid1">
+          <div id="title">
+            <div class="branding"><strong>Plan</strong><span>itt</span></div>
+            <h4 class="slogan">Kitchens designed and supplied, for you.</h4>
+          </div>
+          <div class="hero-caption">
+            <div class="center">
+              <h1><span>Kitchens & </span><span>Living Spaces</span></h1>
+              <p>
+              Made in Britain. Select from a host of doors and cabinets. Quality kitchens at a price you can afford.
+              </p>
+            </div>
+            <div>
+              <!-- To be a slider for gallery -->
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="gallery">
 
-<body>
-  <div id="landing-animation">
-    <div class="roof"></div>
-    <div class="logo">
-      <p>Plan</p>
-      <p>itt.</p>
-    </div>
-    <div class="floor"></div>
-  </div>
-  <header>
-    <div class="branded-menu">
-      <div class="branding"><strong>Plan</strong>itt</div>
-      <i class="fas fa-bars"></i>
-    </div>
-    <a class="contact" href="#">
-      <button class="rounded-btn">
-        Contact
-      </button></a>
-  </header>
-  <nav>
-    <ul class="links">
-      <li><a href="#">Process</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Gallery</a></li>
-    </ul>
-  </nav>
-  <main>
-    <div class="slider">
-      <div class="slides">
-        <div class="slide" id="slide-1"></div>
-        <div class="slide" id="slide-2"></div>
-        <div class="slide" id="slide-3"></div>
-      </div>
-      <div class="rolling-text">
-        <p>Bringing</p>
-        <p>Ideas</p>
-        <p>To Life.</p>
+          </div>
+        </div>
+        <section class="our-service grid2">
+            <h3>Service</h3>
+            <hr />
+            <p>
+              With our expertise and state-of-the-art design software, we enable
+              you to see your dream kitchen before it becomes a reality and
+              provide the high-quality furniture it deserves at an affordable
+              price.
+            </p>
+            <p>
+            Whether you're planning a kitchen or developing a new space, with
+            our photo-realistic visuals, you'll know that you are making the
+            right decisions.
+            </p>
+            <div class="scroll-down">
+              <i class="fas fa-angle-down"></i>
+            </div>
+        </section>
+        <section class="index grid3">
+          <span>1/3</span>
+        </section>
       </div>
     </div>
-    <section id="gallery">
-      <div id="title">
+        <section id="product-styles">
+          <div>
+            <h3>Kitchen Styles</h3>
+            <hr />
+            <p>
+              Our range has been painstakingly curated to ensure that you are
+              getting the best possible kitchen for the most competitive price.
+              The products supplied are of premium build quality, which makes
+              the world of difference to the longevity of your kitchen.
+            </p>
+          </div>
+          <div class="kitchen-selector">
+            <figure class="column">
+              <label>Modern</label>
+              <!-- <p>
+              Asymmetry and clean lines for a bold statement.
+            </p> -->
+            </figure>
+            <figure class="column">
+              <label>Classic</label>
+              <!-- <p>
+              Timeless styles reimagined in the context of a contemporary space
+            </p> -->
+            </figure>
+            <figure class="column">
+              <label>Traditional</label>
+              <!-- <p>
+              The elegance and charm of period cabinetry 
+            </p> -->
+            </figure>
+          </div>
+        </section>
+        <section class="our-service">
+          <p>
+            As a personal, bespoke design service, everything is tailored to
+            your specific requirements, starting with a free design consultation
+            at your home. If you are in the early stages of your project, have
+            building works already underway or want a competitive quote for your
+            kitchen, get in touch.
+          </p>
+          <div class="scroll-down">
+            <i class="fas fa-angle-down"></i>
+          </div>
+        </section>
+        <section id="book-consultation">
+          <div class="overlay">
+            <h3>Book a free consultation</h3>
+            <hr />
+            <p>
+              Let's talk through your requirements with a free, no obligation
+              consultation.
+            </p>
+            <button class="rounded-btn">
+              Book
+            </button>
+          </div>
+        </section>
+      </div>
+      <section id="process">
+        <div class="wrapper">
+          <div class="step">
+            <div class="step-container">
+              <i class="fas fa-pencil-ruler"></i>
+              <h4>Consultation</h4>
+              <p>
+                Schedule a complimentary consultation and give us a brief of
+                your desired kitchen.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-container">
+              <i class="fas fa-handshake"></i>
+              <h4>Presentation & Quote</h4>
+              <p>
+                We produce detailed drawings and renders of your kitchen as
+                intepretated by your brief.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-container">
+              <i class="fas fa-hammer"></i>
+              <h4>Commission</h4>
+              <p>
+                If you like our kitchen design and happy with the incredible
+                value of our products, an order may now be placed and your
+                kitchen will be purpose built.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-container">
+              <i class="fas fa-truck"></i>
+              <h4>Delivery</h4>
+              <p>
+                Your new kitchen is made to order and delivered to site on the
+                specified date.
+              </p>
+            </div>
+          </div>
+        </div>
+        <h3>Process</h3>
+      </section>
+      <footer>
+        <div class="branding-container">
+          <div class="branding">
+            <img
+              src="./img/suppliers/made-in-britain.svg"
+              alt="Made in Britain"
+            />
+            <strong>Plan</strong><span>itt</span>
+          </div>
+        </div>
+        <p>
+          © 2019 BY PLANITT LTD, Registered Address; 71-75 Shelton Street,
+          Covent Garden, London, WC2H 9JQ Company Registration Number 12072323.
+          VAT Registration Number 328 4116 14. All rights reserved.
+        </p>
+      </footer>
+    </main>
+    <div id="media-bar">
+      <div id="social-media">
+        <div class="contact-icon">
+          <a
+            href="mailto:
+          info@planitt.co.uk?subject=Enquiry"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a href="https://www.facebook.com/planitt.co.uk"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://twitter.com/PlanittLtd"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/planitt.co.uk/"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div id="contact-form-container">
+      <div class="container">
         <div class="branding"><strong>Plan</strong><span>itt</span></div>
         <h4 class="slogan">Kitchens designed and supplied, for you.</h4>
       </div>
-      <!--  -->
-    </section>
-    <div class="grid-container">
-      <section class="our-service">
-        <p>
-          With our expertise and state-of-the-art design software, we enable
-          you to see your dream kitchen before it becomes a reality and
-          provide the high-quality furniture it deserves at an affordable
-          price.
-        </p>
-        <!-- <p>
-          Whether you're planning a kitchen or developing a new space, with
-          our photo-realistic visuals, you'll know that you are making the
-          right decisions.
-        </p> -->
-        <div class="scroll-down">
-          <i class="fas fa-angle-down"></i>  
+      <form action="#" id="contact-form">
+        <div class="field">
+          <input type="text" id="fname" name="fname" placeholder="First Name" />
+          <span class="required">*</span>
         </div>
-      </section>
-      <section id="product-styles">
-        <div>
-          <h3>Kitchen Styles</h3>
-          <hr />
-          <p>
-            Our range has been painstakingly curated to ensure that you are
-            getting the best possible kitchen for the most competitive price.
-            The products supplied are of premium build quality, which makes
-            the world of difference to the longevity of your kitchen.
-          </p>
+        <div class="field">
+          <input type="text" id="lname" name="lname" placeholder="Last Name" />
+          <span class="required">*</span>
         </div>
-        <div class="kitchen-selector">
-          <figure class="column">
-            <label>Modern</label>
-            <!-- <p>
-              Asymmetry and clean lines for a bold statement.
-            </p> -->
-          </figure>
-          <figure class="column">
-            <label>Classic</label>
-            <!-- <p>
-              Timeless styles reimagined in the context of a contemporary space
-            </p> -->
-          </figure>
-          <figure class="column">
-            <label>Traditional</label>
-            <!-- <p>
-              The elegance and charm of period cabinetry 
-            </p> -->
-          </figure>
+        <div class="field">
+          <input
+            type="tel"
+            id="number"
+            name="number"
+            placeholder="Contact Number"
+          />
+          <span class="required">*</span>
         </div>
-      </section>
-      <section class="our-service">
-        <p>
-          As a personal, bespoke design service, everything is tailored to
-          your specific requirements, starting with a free design consultation
-          at your home. If you are in the early stages of your project, have
-          building works already underway or want a competitive quote for your
-          kitchen, get in touch.
-        </p>
-        <div class="scroll-down">
-          <i class="fas fa-angle-down"></i>  
+        <div class="field">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+          />
+          <span class="required">*</span>
         </div>
-      </section>
-      <section id="book-consultation">
-        <div class="overlay">
-          <h3>Book a free consultation</h3>
-          <hr />
-          <p>
-            Let's talk through your requirements with a free, no obligation
-            consultation.
-          </p>
-          <button class="rounded-btn">
-            Book
-          </button>
+        <div class="field">
+          <textarea name="message" placeholder="Your Message"></textarea>
         </div>
-      </section>
+        <div class="container">
+          <input type="submit" value="Submit" class="rounded-btn" />
+        </div>
+      </form>
     </div>
-    <section id="process">
-      <div class="wrapper">
-        <div class="step">
-          <div class="step-container">
-            <i class="fas fa-pencil-ruler"></i>
-            <h4>Consultation</h4>
-            <p>
-              Schedule a complimentary consultation and give us a brief of your
-              desired kitchen.
-            </p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-container">
-            <i class="fas fa-handshake"></i>
-            <h4>Presentation & Quote</h4>
-            <p>
-              We produce detailed drawings and renders of your kitchen as
-              intepretated by your brief.
-            </p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-container">
-            <i class="fas fa-hammer"></i>
-          <h4>Commission</h4>
-          <p>
-            If you like our kitchen design and happy with the incredible value
-            of our products, an order may now be placed and your kitchen will
-            be purpose built.
-          </p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-container">
-            <i class="fas fa-truck"></i>
-          <h4>Delivery</h4>
-          <p>
-            Your new kitchen is made to order and delivered to site on the
-            specified date.
-          </p>
-          </div>
-        </div>
-      </div>
-      <h3>Process</h3>
-    </section>
-    <footer>
-      <div class="branding-container">
-        <div class="branding">
-          <img src="./img/suppliers/made-in-britain.svg" alt="Made in Britain" />
-          <strong>Plan</strong><span>itt</span>
-        </div>
-      </div>
-      <p>
-        © 2019 BY PLANITT LTD, Registered Address; 71-75 Shelton Street,
-        Covent Garden, London, WC2H 9JQ Company Registration Number 12072323.
-        VAT Registration Number 328 4116 14. All rights reserved.
-      </p>
-    </footer>
-  </main>
-  <div id="media-bar">
-    <div id="social-media">
-      <div class="contact-icon">
-        <a href="mailto:
-          info@planitt.co.uk?subject=Enquiry"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.facebook.com/planitt.co.uk"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com/PlanittLtd"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/planitt.co.uk/"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-  </div>
-  <div id="contact-form-container">
-    <div class="container">
-      <div class="branding"><strong>Plan</strong><span>itt</span></div>
-      <h4 class="slogan">Kitchens designed and supplied, for you.</h4>
-    </div>
-    <form action="#" id="contact-form">
-      <div class="field">
-        <input type="text" id="fname" name="fname" placeholder="First Name" />
-        <span class="required">*</span>
-      </div>
-      <div class="field">
-        <input type="text" id="lname" name="lname" placeholder="Last Name" />
-        <span class="required">*</span>
-      </div>
-      <div class="field">
-        <input type="tel" id="number" name="number" placeholder="Contact Number" />
-        <span class="required">*</span>
-      </div>
-      <div class="field">
-        <input type="email" id="email" name="email" placeholder="Email Address" />
-        <span class="required">*</span>
-      </div>
-      <div class="field">
-        <textarea name="message" placeholder="Your Message"></textarea>
-      </div>
-      <div class="container">
-        <input type="submit" value="Submit" class="rounded-btn" />
-      </div>
-    </form>
-  </div>
 
-  <script src="./planitt.js"></script>
-</body>
-
+    <script src="./planitt.js"></script>
+  </body>
 </html>
 
 <!-- img scaling used -->
