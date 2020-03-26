@@ -50,6 +50,52 @@ function toggleMenuIcon() {
     $("#filter").fadeToggle("fast");
 }
 
+//kitchen selector functionality for desktop only
+$(".product-styles ul").click(function () {
+    removeActiveClasses();
+    $(this).addClass("active")
+})
+
+function removeActiveClasses() {
+    $(".product-styles ul").removeClass("active")
+}
+
+$("#modern").click(function () {
+    $(".column:nth-of-type(1)").css({
+        "transform": "translate(0,0)"
+    })
+    $(".column:nth-of-type(2)").css({
+        "transform": "translate(0,100%)"
+    })
+    $(".column:nth-of-type(3)").css({
+        "transform": "translate(0,200%)"
+    })
+})
+
+$("#classic").click(function () {
+    $(".column:nth-of-type(1)").css({
+        "transform": "translate(0,-100%)"
+    })
+    $(".column:nth-of-type(2)").css({
+        "transform": "translate(0,0)"
+    })
+    $(".column:nth-of-type(3)").css({
+        "transform": "translate(0,100%)"
+    })
+})
+
+$("#trad").click(function () {
+    $(".column:nth-of-type(1)").css({
+        "transform": "translate(0,-200%)"
+    })
+    $(".column:nth-of-type(2)").css({
+        "transform": "translate(0,-100%)"
+    })
+    $(".column:nth-of-type(3)").css({
+        "transform": "translate(0,0)"
+    })
+})
+
 
 //kitchen-selector :hover label highlighting
 $(".column").hover(function () {
