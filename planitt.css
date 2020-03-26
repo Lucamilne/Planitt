@@ -403,7 +403,7 @@ section h6 {
   font-weight: bold;
 }
 
-.product-styles {
+.product-styles, .our-process {
   padding: 0;
   background-color: var(--color4);
   color: #eee;
@@ -536,7 +536,7 @@ section .rounded-btn {
 #process {
   position: relative;
   padding: 56px 32px;
-  background-color: var(--dark-blue);
+  background-color: var(--color4);
   color: #eee;
   box-shadow: none;
 }
@@ -561,15 +561,12 @@ section .rounded-btn {
   padding: 32px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   overflow: hidden;
-  background: linear-gradient(45deg, #242b34, #1f242c);
-  box-shadow: 11px -11px 22px #13161b, -11px 11px 22px #313a47;
 }
 
 #process .step {
   position: relative;
   opacity: 0;
-  background: #222831;
-  border: 2px solid #eee;
+  /* border: 2px solid #eee; */
   transform: translate(0, 20px);
   transition: opacity 1s ease, transform 500ms ease-out;
   width: 100%;
@@ -598,24 +595,29 @@ section .rounded-btn {
 .step-container {
   position: absolute;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.step-container .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .wrapper p {
   font-size: 0.8rem;
-  text-align: justify;
+  text-align: center;
   line-height: 1.2rem;
-  margin-bottom: 0;
-  padding: 10px 20px;
+  margin: 0;
 }
 
 .wrapper i {
   font-size: 3rem;
-  padding: 10px 0;
+  padding: 12px 0;
   transition: transform 500ms ease;
   width: 100%;
 }
@@ -690,6 +692,7 @@ section .rounded-btn {
 
 .our-service {
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -947,7 +950,7 @@ main {
     height: 100%;
     padding-top: 0;
     overflow: hidden;
-    border: none;
+    border: 12px solid #eee;
     transition: transform 750ms ease;
   }  
   .column:nth-of-type(2) {
@@ -965,5 +968,28 @@ main {
     transform: none;
     z-index: 1;
     box-shadow: none;
+  }
+  .our-process .center {
+    width: 400px;
+  }
+  #process {
+    padding: 0;
+  }
+  #process .wrapper {
+    height: 100%;
+    gap: 12px;
+    padding: 0px 12px;
+    padding-bottom: 12px;
+    border: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: #eee;
+  }
+  #process .step {
+    padding: 0;
+    height: 100%;
+  }
+  #process .center {
+    width: 250px;
   }
 }
