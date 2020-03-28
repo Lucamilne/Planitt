@@ -693,7 +693,7 @@ h1 {
 }
 #contact-form .field textarea {
 	resize: none;
-	height: 150px;
+	height: 100px;
 	margin-top: 32px;
 }
 #contact-form .field span {
@@ -930,6 +930,9 @@ main {
 	}
 	.wrapper p {
 		margin-top: 32px;
+	}
+	#contact-form .field textarea {
+		height: 150px;
 	}
 }
 @media screen and (min-width: 1226px) {
