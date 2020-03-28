@@ -6,7 +6,6 @@ $("#landing-animation").delay(2000).slideUp(600);
 
 // $("main").delay(3000).fadeIn("slow");
 
-
 function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
 }
@@ -18,21 +17,35 @@ function scrollTo(hash) {
 
 //toggle nav menu
 $(".branded-menu").click(function () {
-    $("nav").toggleClass("toggle-nav")
-    invertHeader();
-    toggleMenuIcon();
+    toggleNav();
+    // toggleContactButton();
 })
 
-//cancel nav menu if filter is clicked. needs refinement. .one("click") et,.c
+//cancel nav menu if filter is clicked. needs refinement. .one("click") etc.
 $("#filter").click(function () {
-    $("nav").toggleClass("toggle-nav");
-    invertHeader();
-    toggleMenuIcon();
+    toggleNav();
+    //resetNav
+    //reset contact form
 }).fadeOut();
 
 function toggleMediaBar() {
     $("#media-bar").fadeToggle();
 }
+
+function toggleNav() {
+    $("nav").toggleClass("toggle-nav");
+    invertHeader();
+    toggleMenuIcon();
+}
+
+// function resetNav() {
+//     $("nav").removeClass("toggle-nav")
+//     $(".branded-menu").removeClass("invert")
+//     $("header button").removeClass("invert-button")
+//     $(".branded-menu i").removeClass("fa-times")
+//     $(".branded-menu i").addClass("fa-bars")
+//     $("#filter").fadeOut("fast");
+// }
 
 $(".contact").click(function () {
     $("#contact-form-container").toggleClass("toggle-nav")

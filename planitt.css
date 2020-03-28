@@ -16,6 +16,9 @@ a, u {
 	text-decoration: none;
 	color: inherit;
 }
+p {
+	margin-top: 32px;
+}
 ::-moz-selection {
 	color: #222;
 	background-color: rgba(255, 255, 255, 0.4);
@@ -89,6 +92,7 @@ body {
 	font-size: 2rem;
 	overflow: hidden;
 	line-height: 2rem;
+	margin: 0;
 }
 .logo p:nth-of-type(1) {
 	font-weight: bold;
@@ -263,8 +267,7 @@ nav {
 	justify-content: center;
 	background-color: #fff;
 	width: 100%;
-	padding-top: 108px;
-	padding-bottom: 5vw;
+	padding: 56px 32px;
 	z-index: 9;
 	transform: translate(0, -100%);
 	transition: transform 300ms ease;
@@ -325,7 +328,7 @@ section {
 section hr {
 	width: 56px;
 	border: 1px solid;
-	margin: 32px 0;
+	margin-top: 32px;
 }
 h3 {
 	font-family: "Libre Baskerville", serif;
@@ -460,7 +463,6 @@ h6 {
 }
 .overlay p {
 	width: 330px;
-	margin-bottom: 32px;
 }
 section .rounded-btn {
 	color: #222;
@@ -543,7 +545,7 @@ section .rounded-btn {
 	text-align: center;
 	line-height: 1.2rem;
 	margin: 0;
-	margin-top: 12px;
+	margin-top: 32px;
 }
 .wrapper i {
 	font-size: 3rem;
@@ -604,9 +606,12 @@ h1 {
 	background-color: rgba(255, 255, 255, 0.4);
 	padding: 12px;
 }
-#title .branding, #contact-form-container .branding {
+#title .branding {
 	font-size: 4rem;
 	overflow: hidden;
+}
+#contact-form-container .branding {
+	font-size: 3rem;
 }
 .slogan {
 	font-style: italic;
@@ -628,7 +633,6 @@ h1 {
 .our-service p {
 	font-weight: 400;
 	line-height: 1.5rem;
-	margin-bottom: 32px;
 }
 .scroll-down {
 	animation: prompt 800ms infinite ease-out;
@@ -650,14 +654,30 @@ h1 {
 	color: #eee;
 	bottom: 0;
 	width: 100%;
-	padding: 10vw;
+	padding: 32px;
 	transform: translate(0, 100%);
 	transition: transform 300ms ease;
+	z-index: 8;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#contact-form-container .container:nth-of-type(1) {
+	margin-bottom: 20px;
+}
+#contact-form-container .container:nth-of-type(2) {
+	margin-top: 32px;
+	margin-bottom: 0px;
+}
+#contact-form {
+	width: 100%;
 }
 .field {
 	position: relative;
 	color: rgba(255, 255, 255, 0.1);
 	height: auto;
+	margin-top: 12px;
 }
 #contact-form .field input, textarea {
 	background: none;
@@ -668,14 +688,13 @@ h1 {
 	outline: none;
 	color: #eee;
 	width: 100%;
-	height: 12vw;
-	font-size: 4vw;
+	font-size: 1.2rem;
 	font-family: "Montserrat", sans-serif;
 }
 #contact-form .field textarea {
 	resize: none;
-	height: 30vw;
-	margin-top: 4vw;
+	height: 150px;
+	margin-top: 32px;
 }
 #contact-form .field span {
 	position: absolute;
@@ -688,7 +707,7 @@ h1 {
 #contact-form .rounded-btn {
 	background-color: #eee;
 	color: #222;
-	margin: 20px auto;
+	margin-top: 32px;
 }
 .container {
 	display: flex;
@@ -765,6 +784,7 @@ footer .branding-container {
 footer p {
 	box-sizing: border-box;
 	text-align: center;
+	margin: 0;
 	padding: 20px;
 	background-color: #eee;
 	width: 100%;
@@ -909,7 +929,7 @@ main {
 		width: 250px;
 	}
 	.wrapper p {
-		margin: 0;
+		margin-top: 32px;
 	}
 }
 @media screen and (min-width: 1226px) {
@@ -930,6 +950,9 @@ main {
 	.our-service p:nth-of-type(2) {
 		display: block;
 		margin: 0;
+	}
+	#contact-form {
+		width: 900px;
 	}
 	.grid4 {
 		grid-area: 1 / 1 / 6 / 5;
