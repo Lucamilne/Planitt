@@ -299,7 +299,7 @@ nav {
 .links li {
 	padding: 0 20px;
 	line-height: 2;
-	margin-bottom: 2vw;
+	margin-top: 32px;
 	text-align: center;
 }
 .links li a {
@@ -432,10 +432,10 @@ h6 {
 	background-image: url("./img/modern.jpg");
 }
 .column:nth-of-type(2) {
-	background-image: url("./img/classic.jpg");
+	background-image: url("./img/shaker.jpg");
 }
 .column:nth-of-type(3) {
-	background-image: url("./img/shaker.jpg");
+	background-image: url("./img/classic.jpg");
 }
 .column:hover {
 	transform: scale(1.01);

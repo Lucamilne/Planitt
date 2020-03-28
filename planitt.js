@@ -38,15 +38,6 @@ function toggleNav() {
     toggleMenuIcon();
 }
 
-// function resetNav() {
-//     $("nav").removeClass("toggle-nav")
-//     $(".branded-menu").removeClass("invert")
-//     $("header button").removeClass("invert-button")
-//     $(".branded-menu i").removeClass("fa-times")
-//     $(".branded-menu i").addClass("fa-bars")
-//     $("#filter").fadeOut("fast");
-// }
-
 $(".contact").click(function () {
     $("#contact-form-container").toggleClass("toggle-nav")
     toggleMediaBar()
@@ -109,6 +100,25 @@ $("#trad").click(function () {
     })
 })
 
+// Add smooth scrolling to all links
+$("a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+    // Prevent default anchor click behavior
+    event.preventDefault();
+      // Store hash
+    var hash = this.hash;
+      // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 0, function(){
+ 
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+  }
+});
 
 //kitchen-selector :hover label highlighting
 $(".column").hover(function () {
@@ -123,7 +133,8 @@ $(".column").hover(function () {
         "color": "#eee",
         "transform": "translate(0,0)"
     })
-})
+});
+
 
 //scroll into view animation triggering
 function isScrolledIntoView(elem) {
@@ -145,7 +156,6 @@ $(window).scroll(function () {
 });
 
 //media bar hover effect
-
 $(".contact-icon i").hover(function () {
     //mouse in
     $(this).css({
