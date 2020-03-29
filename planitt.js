@@ -1,7 +1,41 @@
 const rollingText = document.querySelector(".rolling-text p");
 const slide = document.querySelector(".slide");
 const body = document.body;
+const images = document.querySelectorAll("[data-src]");
 
+//lazy loading scripts
+function preloadImage(img) {
+    const src = img.getAttribute("data-src");
+    if (!src) {
+        return;
+    }
+
+    img.src = src;
+}
+
+//threshold options
+const imgOptions = {
+    threshold: 0,
+    rootMargin: "0px 0px 300px 0px"
+};
+
+const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            preloadImage(entry.target);
+            //Stops observing once img loaded
+            imgObserver.unobserve(entry.target);
+        }
+    })
+}, imgOptions);
+
+images.forEach(image => {
+    imgObserver.observe(image);
+})
+
+// landing animation (logo)
 $("#landing-animation").delay(2000).slideUp(600);
 
 // $("main").delay(3000).fadeIn("slow");
