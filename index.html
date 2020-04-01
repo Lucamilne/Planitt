@@ -6,13 +6,13 @@
     <title>Planitt.</title>
     <style></style>
     <script src="./libs/jQuery/jquery-3.4.1.min.js"></script>
+    <!-- <script src="./libs/lazyload.min.js"></script> -->
     <script
       src="https://kit.fontawesome.com/2691de35e3.js"
       crossorigin="anonymous"
     ></script>
     <style>
       @import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
-      @import url("https://fonts.googleapis.com/css?family=Codystar|Josefin+Slab&display=swap");
       @import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat&display=swap");
       @import url("https://fonts.googleapis.com/css?family=Yantramanav&display=swap");
     </style>
@@ -94,7 +94,7 @@
               price.
             </p>
             <p>
-              <br>
+              <br />
               Whether you're planning a kitchen or developing a new space, with
               our photo-realistic visuals, you'll know that you are making the
               right decisions.
@@ -122,90 +122,261 @@
               </p>
             </div>
           </div>
-        </section>    
-        <section class="carousel grid4" id="kitchens">            
-            <div class="kitchen-ranges carousel__track-container">
-              <ul class="column carousel__track">
-                <li class="carousel__slide current-slide">
-                  <img class="carousel__image" data-src="./img/temp2.jpg">
-                  <label>Alpina</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp3.jpg">
-                  <label>Belsay</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp2.jpg">
-                  <label>Broadoak</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp2.jpg">
-                  <label>Clarendon</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp2.jpg">
-                  <label>Cornell</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp1.jpg">
-                  <label>Ellerton</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp2.jpg">
-                  <label>Lichfield</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp2.jpg">
-                  <label>Milbourne</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp2.jpg">
-                  <label>Milton</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp3.jpg">
-                  <label>Mode</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp1.jpg">
-                  <label>Mornington</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp4.jpg">
-                  <label>Porter</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp1.jpg">
-                  <label>Remo</label>
-                </li>
-                <li class="carousel__slide">
-                  <img class="carousel__image" data-src="./img/temp2.jpg">
-                  <label>Unity</label>
-                </li>
-              </ul>
-            </div>
-            <button class="carousel__button carousel__button-left desktop is-hidden">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="carousel__button carousel__button-right desktop">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="carousel__nav desktop">
-              <button class="carousel__indicator current-slide"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-              <button class="carousel__indicator"></button>
-            </div>
+        </section>
+        <section class="carousel grid4" id="kitchens">
+          <div class="kitchen-ranges carousel__track-container">
+            <ul class="column carousel__track">
+              <li class="carousel__slide current-slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Alpina1_400.png"
+                  data-srcset="img/Products/Alpina1_400.png 400w,
+                                    img/Products/Alpina1_800.png 800w,
+                                    img/Products/Alpina1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Alpina"
+                  draggable="false"
+                />
+                <label>Alpina</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Belsay1_400.png"
+                  data-srcset="img/Products/Belsay1_400.png 400w,
+                                img/Products/Belsay1_800.png 800w,
+                                img/Products/Belsay1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Belsay"
+                  draggable="false"
+                />
+                <label>Belsay</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Broadoak1_400.png"
+                  data-srcset="img/Products/Broadoak1_400.png 400w,
+                                img/Products/Broadoak1_800.png 800w,
+                                img/Products/Broadoak1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Broadoak"
+                  draggable="false"
+                />
+                <label>Broadoak</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Clarendon1_400.png"
+                  data-srcset="img/Products/Clarendon1_400.png 400w,
+                                img/Products/Clarendon1_800.png 800w,
+                                img/Products/Clarendon1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Clarendon"
+                  draggable="false"
+                />
+                <label>Clarendon</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Ellerton1_400.png"
+                  data-srcset="img/Products/Ellerton1_400.png 400w,
+                                img/Products/Ellerton1_800.png 800w,
+                                img/Products/Ellerton1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Ellerton"
+                  draggable="false"
+                />
+                <label>Ellerton</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Fitzroy1_400.png"
+                  data-srcset="img/Products/Fitzroy1_400.png 400w,
+                                img/Products/Fitzroy1_800.png 800w,
+                                img/Products/Fitzroy1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Fitzroy"
+                  draggable="false"
+                />
+                <label>Fitzroy</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Hunton1_400.png"
+                  data-srcset="img/Products/Hunton1_400.png 400w,
+                                img/Products/Hunton1_800.png 800w,
+                                img/Products/Hunton1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Hunton"
+                  draggable="false"
+                />
+                <label>Hunton</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Lichfield1_400.png"
+                  data-srcset="img/Products/Lichfield1_400.png 400w,
+                                img/Products/Lichfield1_800.png 800w,
+                                img/Products/Lichfield1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Lichfield"
+                  draggable="false"
+                />
+                <label>Lichfield</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Milbourne1_400.png"
+                  data-srcset="img/Products/Milbourne1_400.png 400w,
+                                img/Products/Milbourne1_800.png 800w,
+                                img/Products/Milbourne1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Milbourne"
+                  draggable="false"
+                />
+                <label>Milbourne</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Mode1_400.png"
+                  data-srcset="img/Products/Mode1_400.png 400w,
+                                img/Products/Mode1_800.png 800w,
+                                img/Products/Mode1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Mode"
+                  draggable="false"
+                />
+                <label>Mode</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Mornington_Beaded1_400.png"
+                  data-srcset="img/Products/Mornington_Beaded1_400.png 400w,
+                                img/Products/Mornington_Beaded1_800.png 800w,
+                                img/Products/Mornington_Beaded1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Mornington_Beaded"
+                  draggable="false"
+                />
+                <label>Mornington Beaded</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Mornington_Shaker1_400.png"
+                  data-srcset="img/Products/Mornington_Shaker1_400.png 400w,
+                                img/Products/Mornington_Shaker1_800.png 800w,
+                                img/Products/Mornington_Shaker1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Mornington_Shaker"
+                  draggable="false"
+                />
+                <label>Mornington Shaker</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Porter1_400.png"
+                  data-srcset="img/Products/Porter1_400.png 400w,
+                                img/Products/Porter1_800.png 800w,
+                                img/Products/Porter1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Porter"
+                  draggable="false"
+                />
+                <label>Porter</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Remo1_400.png"
+                  data-srcset="img/Products/Remo1_400.png 400w,
+                                img/Products/Remo1_800.png 800w,
+                                img/Products/Remo1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Remo"
+                  draggable="false"
+                />
+                <label>Remo</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Stanhope1_400.png"
+                  data-srcset="img/Products/Stanhope1_400.png 400w,
+                                img/Products/Stanhope1_800.png 800w,
+                                img/Products/Stanhope1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Stanhope"
+                  draggable="false"
+                />
+                <label>Stanhope</label>
+              </li>
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Tomba1_400.png"
+                  data-srcset="img/Products/Tomba1_400.png 400w,
+                                img/Products/Tomba1_800.png 800w,
+                                img/Products/Tomba1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Tomba"
+                  draggable="false"
+                />
+                <label>Tomba</label>
+              </li>
+              
+              <li class="carousel__slide">
+                <img
+                  class="carousel__image"
+                  data-src="img/Products/Unity1_400.png"
+                  data-srcset="img/Products/Unity1_400.png 400w,
+                                img/Products/Unity1_800.png 800w,
+                                img/Products/Unity1_1600.png 1600w"
+                  data-sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+                  alt="Unity"
+                  draggable="false"
+                />
+                <label>Unity</label>
+              </li>
+            </ul>
+          </div>
+          <button
+            class="carousel__button carousel__button-left desktop is-hidden"
+          >
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <button class="carousel__button carousel__button-right desktop">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          <div class="carousel__nav desktop">
+            <button class="carousel__indicator current-slide"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+            <button class="carousel__indicator"></button>
+          </div>
         </section>
         <section class="our-service mobile">
           <p>
@@ -218,7 +389,7 @@
           <div class="scroll-down">
             <i class="fas fa-angle-down"></i>
           </div>
-        </section>  
+        </section>
         <section id="book-consultation" class="mobile">
           <div class="overlay">
             <h3>Book a free consultation</h3>
@@ -254,12 +425,12 @@
               <div class="step-container">
                 <div class="center">
                   <i class="fas fa-pencil-ruler"></i>
-                <h4>Consultation</h4>
-                <hr class="desktop">
-                <p>
-                  Schedule a complimentary consultation and give us a brief of
-                  your desired kitchen.
-                </p>
+                  <h4>Consultation</h4>
+                  <hr class="desktop" />
+                  <p>
+                    Schedule a complimentary consultation and give us a brief of
+                    your desired kitchen.
+                  </p>
                 </div>
               </div>
             </div>
@@ -267,12 +438,12 @@
               <div class="step-container">
                 <div class="center">
                   <i class="fas fa-handshake"></i>
-                <h4>Presentation & Quote</h4>
-                <hr class="desktop">
-                <p>
-                  We produce detailed drawings and renders of your kitchen as
-                  intepretated by your brief.
-                </p>
+                  <h4>Presentation & Quote</h4>
+                  <hr class="desktop" />
+                  <p>
+                    We produce detailed drawings and renders of your kitchen as
+                    intepretated by your brief.
+                  </p>
                 </div>
               </div>
             </div>
@@ -280,26 +451,26 @@
               <div class="step-container">
                 <div class="center">
                   <i class="fas fa-hammer"></i>
-                <h4>Commission</h4>
-                <hr class="desktop">
-                <p>
-                  If you like our kitchen design and happy with the incredible
-                  value of our products, an order may now be placed and your
-                  kitchen will be purpose built.
-                </p>
-                </div>               
+                  <h4>Commission</h4>
+                  <hr class="desktop" />
+                  <p>
+                    If you like our kitchen design and happy with the incredible
+                    value of our products, an order may now be placed and your
+                    kitchen will be purpose built.
+                  </p>
+                </div>
               </div>
             </div>
             <div class="step">
               <div class="step-container">
                 <div class="center">
                   <i class="fas fa-truck"></i>
-                <h4>Delivery</h4>
-                <hr class="desktop">
-                <p>
-                  Your new kitchen is made to order and delivered to site on the
-                  specified date.
-                </p>
+                  <h4>Delivery</h4>
+                  <hr class="desktop" />
+                  <p>
+                    Your new kitchen is made to order and delivered to site on
+                    the specified date.
+                  </p>
                 </div>
               </div>
             </div>
@@ -326,23 +497,25 @@
         </p>
       </footer>
     </main>
-    <div id="media-bar">
-      <div id="social-media">
-        <div class="contact-icon">
-          <a
-            href="mailto:
-          info@planitt.co.uk?subject=Enquiry"
-            ><i class="fas fa-envelope"></i
-          ></a>
-          <a href="https://www.facebook.com/planitt.co.uk"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="https://twitter.com/PlanittLtd"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="https://www.instagram.com/planitt.co.uk/"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
+    <div class="media-container">
+      <div id="media-bar">
+        <div id="social-media">
+          <div class="contact-icon">
+            <a
+              href="mailto:
+            info@planitt.co.uk?subject=Enquiry"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a href="https://www.facebook.com/planitt.co.uk"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://twitter.com/PlanittLtd"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="https://www.instagram.com/planitt.co.uk/"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
         </div>
       </div>
     </div>
@@ -385,30 +558,7 @@
         </div>
       </form>
     </div>
-
+    <script src="./libs/lazyload.min.js"></script>
     <script src="./planitt.js"></script>
   </body>
 </html>
-
-<!-- img scaling used -->
-
-<!-- <img class="lazy loaded"
-  data-src="https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-800x800-c-center.jpg"
-  data-srcset="https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-800x800-c-center.jpg 800w, https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-400x400-c-center.jpg 400w, https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-1600x1600-c-center.jpg 1600w"
-  sizes="(max-width:1440px) 800px,(max-width:720px) 400px,1600px" alt="" draggable="false"
-  srcset="https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-800x800-c-center.jpg 800w, https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-400x400-c-center.jpg 400w, https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-1600x1600-c-center.jpg 1600w"
-  src="https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-800x800-c-center.jpg"
-  data-was-processed="true"> -->
-
-  <!-- 
-    400x400 mobile
-    800x800 ipad
-    1600 x 1600 desktop
-   -->
-
-   <img srcset="./img/alpina-400.jpg 400w,
-                ./img/alpina-800.jpg 800w,
-                ./img/alpina-1600.jpg 1600w"
-        sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
-        alt="Alpina" 
-        draggable="false">

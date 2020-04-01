@@ -371,9 +371,15 @@ h6 {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	background: transparent;
+	background: rgba(0, 0, 0, 0.3);
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
 	border: 0;
 	cursor: pointer;
+}
+.carousel__button, .carousel__indicator {
+	outline: none;
 }
 .carousel__button-left {
 	left: 32px;
@@ -596,7 +602,7 @@ h1 {
 	width: 100%;
 	height: 100%;
 	padding-bottom: 100%;
-	background-image: url("./img/temp4.jpg");
+	background-image: url("https://i.redd.it/hvwn4sh5mub41.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -718,10 +724,14 @@ h1 {
 	align-items: center;
 	justify-content: center;
 }
+.media-container {
+	display: flex;
+	justify-content: center;
+}
 #media-bar {
 	position: fixed;
 	bottom: 0;
-	width: 100%;
+	width: auto;
 	display: flex;
 	justify-content: center;
 	color: #fff;
