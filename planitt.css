@@ -349,6 +349,61 @@ h6 {
 	font-size: 0.8rem;
 	font-weight: bold;
 }
+.carousel {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+.carousel__image {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.carousel__track {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.carousel__slide {
+	position: relative;
+}
+.carousel__button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+}
+.carousel__button-left {
+	left: 32px;
+}
+.carousel__button-right {
+	right: 32px;
+}
+.carousel__button i {
+	color: #eee;
+}
+.carousel__nav {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	bottom: 24px;
+	justify-content: space-evenly;
+}
+.carousel__indicator {
+	cursor: pointer;
+	font-family: inherit;
+	border: 0;
+	border-radius: 5px;
+	width: 5%;
+	height: 5px;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding: 0;
+}
+.carousel__indicator.current-slide {
+	background-color: #eee;
+}
 .product-styles, .our-process {
 	background-color: var(--color4);
 	padding: 56px 32px;
@@ -369,53 +424,6 @@ h6 {
 	line-height: 1.5rem;
 	text-align: justify;
 }
-.product-styles li {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 32px;
-	z-index: 1;
-}
-.product-styles ul {
-	width: 200px;
-	color: #eee;
-	border: 1px solid #eee;
-	padding: 9px 25px;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	margin-bottom: 12px;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	background-color: rgba(0, 0, 0, 0.5);
-}
-.product-styles ul:hover, .active {
-	background-color: #eee !important;
-	color: #222 !important;
-	letter-spacing: 3px !important;
-	font-weight: bold !important;
-}
-.kitchen-selector {
-	box-sizing: border-box;
-	width: 100%;
-	height: auto;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: 32px;
-}
-.kitchen-selector .column {
-	position: relative;
-	width: 100%;
-	height: 0;
-	padding-top: 100%;
-	box-sizing: inherit;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	overflow: hidden;
-	transition: transform 250ms ease-out, box-shadow 250ms ease-out;
-	border: 4px solid #eee;
-}
 .column label {
 	position: absolute;
 	font-size: 1.5rem;
@@ -424,24 +432,15 @@ h6 {
 	color: #eee;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	top: 10px;
+	top: 12px;
 	left: 0;
 	padding: 2px 4px 0 2px;
 	transition: transform 250ms ease-out;
 }
-.column:nth-of-type(1) {
-	background-image: url("./img/modern.jpg");
-}
-.column:nth-of-type(2) {
-	background-image: url("./img/shaker.jpg");
-}
-.column:nth-of-type(3) {
-	background-image: url("./img/classic.jpg");
-}
-.column:hover {
+/* .column:hover {
 	transform: scale(1.01);
 	box-shadow: var(--box-shadow);
-}
+} */
 #book-consultation {
 	padding: 0;
 	width: 100%;
@@ -464,6 +463,9 @@ h6 {
 }
 .overlay p {
 	width: 330px;
+}
+.overlay .rounded-btn {
+	margin-top: 32px;
 }
 section .rounded-btn {
 	color: #222;
@@ -803,6 +805,9 @@ main {
 	font-weight: 900;
 }
 @media screen and (min-width: 768px) {
+	header {
+		position: absolute;
+	}
 	.index-container {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
@@ -814,6 +819,33 @@ main {
 	}
 	.desktop {
 		display: block;
+	}
+	.is-hidden {
+		display: none;
+	}
+	.carousel__track-container {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+	}
+	.carousel__track {
+		position: relative;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		transition: transform 800ms ease;
+	}
+	.carousel__slide {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	.carousel__slide label {
+		font-size: 3rem;
+	}
+	.carousel__nav {
+		display: flex;
 	}
 	footer {
 		grid-template-columns: minmax(260px, 1fr) 1.68fr;
@@ -867,39 +899,24 @@ main {
 	.our-service .center {
 		width: 400px;
 	}
-	.product-styles {
+	.carousel {
 		padding: 0 !important;
 	}
 	.product-styles .center {
 		width: 350px;
 	}
-	.kitchen-selector {
+	.kitchen-ranges {
 		position: relative;
 		overflow: hidden;
 		height: 100%;
 		width: 100%;
 	}
-	.kitchen-selector .column {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		padding-top: 0;
-		overflow: hidden;
-		border: 12px solid #eee;
-		transition: transform 750ms ease;
-	}
+	
 	.column:nth-of-type(2) {
 		transform: translate(0, 100%);
 	}
-	.column:nth-of-type(3) {
-		transform: translate(0, 200%);
-	}
-	.column label {
-		font-size: 3rem;
-	}
 	.column:hover {
 		transform: none;
-		z-index: 1;
 		box-shadow: none;
 	}
 	.our-process {

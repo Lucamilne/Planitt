@@ -94,6 +94,7 @@
               price.
             </p>
             <p>
+              <br>
               Whether you're planning a kitchen or developing a new space, with
               our photo-realistic visuals, you'll know that you are making the
               right decisions.
@@ -122,23 +123,89 @@
             </div>
           </div>
         </section>    
-        <section class="product-styles grid4" id="kitchens">
-            <div class="kitchen-selector">
-              <figure class="column">
-                <label>Modern</label>
-              </figure>
-              <figure class="column">
-                <label>Classic</label>
-              </figure>
-              <figure class="column">
-                <label>Traditional</label>
-              </figure>              
+        <section class="carousel grid4" id="kitchens">            
+            <div class="kitchen-ranges carousel__track-container">
+              <ul class="column carousel__track">
+                <li class="carousel__slide current-slide">
+                  <img class="carousel__image" data-src="./img/temp2.jpg">
+                  <label>Alpina</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp3.jpg">
+                  <label>Belsay</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp2.jpg">
+                  <label>Broadoak</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp2.jpg">
+                  <label>Clarendon</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp2.jpg">
+                  <label>Cornell</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp1.jpg">
+                  <label>Ellerton</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp2.jpg">
+                  <label>Lichfield</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp2.jpg">
+                  <label>Milbourne</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp2.jpg">
+                  <label>Milton</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp3.jpg">
+                  <label>Mode</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp1.jpg">
+                  <label>Mornington</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp4.jpg">
+                  <label>Porter</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp1.jpg">
+                  <label>Remo</label>
+                </li>
+                <li class="carousel__slide">
+                  <img class="carousel__image" data-src="./img/temp2.jpg">
+                  <label>Unity</label>
+                </li>
+              </ul>
             </div>
-            <li class="desktop">
-              <ul id="modern" class="active">Modern</ul>
-              <ul id="classic">Classic</ul>
-              <ul id="trad">Traditional</ul>
-            </li>
+            <button class="carousel__button carousel__button-left desktop is-hidden">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel__button carousel__button-right desktop">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="carousel__nav desktop">
+              <button class="carousel__indicator current-slide"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+              <button class="carousel__indicator"></button>
+            </div>
         </section>
         <section class="our-service mobile">
           <p>
@@ -332,3 +399,16 @@
   srcset="https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-800x800-c-center.jpg 800w, https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-400x400-c-center.jpg 400w, https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-1600x1600-c-center.jpg 1600w"
   src="https://connect-homes.com/wp-content/uploads/2020/02/ConnectShowcaseMarVista_12-800x800-c-center.jpg"
   data-was-processed="true"> -->
+
+  <!-- 
+    400x400 mobile
+    800x800 ipad
+    1600 x 1600 desktop
+   -->
+
+   <img srcset="./img/alpina-400.jpg 400w,
+                ./img/alpina-800.jpg 800w,
+                ./img/alpina-1600.jpg 1600w"
+        sizes="(min-width: 768px) 100vw,(min-width: 1226px) 66vw, 100vw"
+        alt="Alpina" 
+        draggable="false">
