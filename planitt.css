@@ -366,11 +366,25 @@ h6 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	height: 100vw;
+	overflow-y: scroll;
 }
 .carousel__slide {
 	position: relative;
 	height: 100vw;
 }
+.carousel__scroll {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	color: #eee;
+	right: 12px;
+	bottom: 32px;
+}
+.carousel__scroll i {
+	height: 20px;
+}
+
 .carousel__button {
 	position: absolute;
 	top: 50%;
@@ -454,7 +468,7 @@ h6 {
 #book-consultation {
 	padding: 0;
 	width: 100%;
-	background-image: url("./img/meet.jpg");
+	background-image: url("./img/freeuse/meet_400.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -528,16 +542,16 @@ section .rounded-btn {
 	border: 4px solid #eee;
 }
 #process .step:nth-of-type(1) {
-	background-image: url("./img/consult.jpg");
+	background-image: url("./img/freeuse/consult_400.png");
 }
 #process .step:nth-of-type(2) {
-	background-image: url("./img/design.jpg");
+	background-image: url("./img/freeuse/design_400.png");
 }
 #process .step:nth-of-type(3) {
-	background-image: url("./img/build.jpg");
+	background-image: url("./img/freeuse/build_400.png");
 }
 #process .step:nth-of-type(4) {
-	background-image: url("./img/warehouse.jpg");
+	background-image: url("./img/freeuse/warehouse_400.png");
 }
 .step-container {
 	position: absolute;
@@ -606,13 +620,16 @@ h1 {
 	width: 100%;
 	height: 100%;
 	padding-bottom: 100%;
-	background-image: url("https://i.redd.it/hvwn4sh5mub41.jpg");
+	background-image: url("./img/freeuse/hero_400.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 }
 #title {
 	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -849,6 +866,7 @@ main {
 		margin: 0;
 		list-style: none;
 		transition: transform 800ms ease;
+		overflow-y: visible;
 	}
 	.carousel__slide {
 		position: absolute;
