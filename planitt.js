@@ -10,6 +10,10 @@ if (document.documentElement.clientWidth < 768) {
 
 //lazy loading scripts
 var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".hero-image"
+});
+
+var lazyLoadInstance = new LazyLoad({
     elements_selector: ".carousel__image"
 });
 
