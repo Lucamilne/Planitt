@@ -354,7 +354,7 @@ h6 {
 }
 .carousel {
 	position: relative;
-	height: 100%;
+	height: 100vw;
 	width: 100%;
 }
 .carousel__image, .hero-image {
@@ -362,29 +362,26 @@ h6 {
 	width: 100%;
 	object-fit: cover;
 }
-.carousel__track {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 100vw;
-	overflow-y: scroll;
-}
-.carousel__slide {
+.carousel__track-container {
 	position: relative;
-	height: 100vw;
+	height: 100%;
+	overflow: hidden;
 }
-.carousel__scroll {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	color: #eee;
-	right: 12px;
-	bottom: 32px;
-}
-.carousel__scroll i {
-	height: 20px;
+.carousel__track {
+	position: relative;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	transition: transform 800ms ease;
+	overflow: scroll;
 }
 
+.carousel__slide {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
 .carousel__button {
 	position: absolute;
 	top: 50%;
@@ -845,24 +842,11 @@ main {
 	.is-hidden {
 		display: none;
 	}
-	.carousel__track-container {
-		position: relative;
+	.carousel {
 		height: 100%;
-		overflow: hidden;
 	}
 	.carousel__track {
-		position: relative;
-		height: 100%;
-		padding: 0;
-		margin: 0;
-		list-style: none;
-		transition: transform 800ms ease;
-		overflow-y: visible;
-	}
-	.carousel__slide {
-		position: absolute;
-		height: 100%;
-		width: 100%;
+		overflow: visible;
 	}
 	.carousel__slide label {
 		font-size: 3rem;

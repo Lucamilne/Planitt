@@ -169,10 +169,6 @@ const dotsNav = document.querySelector(".carousel__nav")
 const dots = Array.from(dotsNav.children);
 
 slides.forEach((slide, index) => {
-    if (isMobile) {
-        return;
-    }
-
     slide.style.left = `${slideWidth * index}px`;
 })
 
