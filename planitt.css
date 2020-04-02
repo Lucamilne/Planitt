@@ -349,6 +349,9 @@ h6 {
 	font-size: 0.8rem;
 	font-weight: bold;
 }
+#kitchens {
+	padding: 0;
+}
 .carousel {
 	position: relative;
 	height: 100%;
@@ -366,6 +369,7 @@ h6 {
 }
 .carousel__slide {
 	position: relative;
+	height: 100vw;
 }
 .carousel__button {
 	position: absolute;
@@ -940,8 +944,7 @@ main {
 	}
 	#process .wrapper {
 		height: 100%;
-		padding: 0 12px;
-		padding-bottom: 12px;
+		padding: 12px;
 		border: none;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(2, 1fr);
