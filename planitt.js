@@ -197,6 +197,10 @@ const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
 }
 
 nextButton.addEventListener("click", () => {
+    if (isMobile) {
+        return;
+    }
+    
     let currentSlide = track.querySelector(".current-slide");
     let nextSlide = currentSlide.nextElementSibling;
     const currentDot = dotsNav.querySelector(".current-slide");
