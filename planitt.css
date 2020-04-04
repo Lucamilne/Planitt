@@ -427,6 +427,16 @@ h6 {
 .carousel__indicator.current-slide {
 	background-color: #eee;
 }
+.swipe {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	width: 56px;
+	bottom: 12px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #eee;
+}
 .product-styles, .our-process {
 	background-color: var(--color4);
 	padding: 56px 32px;
