@@ -103,20 +103,20 @@ $("a").on('click', function(event) {
   }
 });
 
-//kitchen-selector :hover label highlighting
-// $(".column li").hover(function () {
-//     $(this).children("label").css({
-//         "background-color": "rgba(255,255,255,0.5",
-//         "color": "#222",
-//         "transform": "translate(10px, 0)"
-//     })
-// }, function () {
-//     $(this).children("label").css({
-//         "background-color": "rgba(0, 0, 0, 0.3)",
-//         "color": "#eee",
-//         "transform": "translate(0,0)"
-//     })
-// });
+// kitchen-selector hover label highlighting
+$(".column li").hover(function () {
+    $(this).children("label").css({
+        "background-color": "rgba(255,255,255,0.5",
+        "color": "#222",
+        "transform": "translate(10px, 0)"
+    })
+}, function () {
+    $(this).children("label").css({
+        "background-color": "rgba(0, 0, 0, 0.3)",
+        "color": "#eee",
+        "transform": "translate(0,0)"
+    })
+});
 
 
 //scroll into view animation triggering
@@ -139,7 +139,34 @@ $(window).scroll(function () {
 });
 //^ This is a load of bollocks. Change it.
 
+//intersection observer
+const sections = document.querySelectorAll("section");
+const faders = document.querySelectorAll(".fade-in");
+const sliders = document.querySelectorAll(".slide-in");
 
+const options = {
+    threshold: 0,
+    rootMargin: "0px 0px -200px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add("appear");
+            // appearOnScroll.unobserve(entry.target);
+        }
+    });
+}, options);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+})
+
+sliders.forEach(slider => {
+    appearOnScroll.observe(slider);
+})
 //media bar hover effect
 $(".contact-icon i").hover(function () {
     //mouse in
@@ -156,10 +183,6 @@ $(".contact-icon i").hover(function () {
 })
 
 //carousel
-//carousel
-//carousel
-//carousel
-
 const track = document.querySelector(".carousel__track");
 const slides = Array.from(track.children);
 const nextButton = document.querySelector(".carousel__button-right");

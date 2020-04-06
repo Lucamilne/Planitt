@@ -217,7 +217,7 @@ header {
 	position: fixed;
 	box-sizing: border-box;
 	color: var(--color1);
-	width: 100%;
+	width: 100vw;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
@@ -324,6 +324,7 @@ section {
 	background-color: #eee;
 	color: #222;
 	padding: 56px 0;
+	overflow: hidden;
 }
 section hr {
 	width: 56px;
@@ -374,7 +375,6 @@ h6 {
 	margin: 0;
 	list-style: none;
 	transition: transform 800ms ease;
-	overflow: scroll;
 	scroll-snap-type: inline mandatory;
 }
 
@@ -444,6 +444,7 @@ h6 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	over
 }
 .product-styles:nth-of-type(1) {
 	padding-top: 56px;
@@ -834,6 +835,25 @@ main {
 	color: #ccc;
 	letter-spacing: 1.1rem;
 	font-weight: 900;
+}
+.fade-in {
+	opacity: 0;
+	transition: all 400ms ease;
+}
+.fade-in.appear {
+	opacity: 1;
+}
+.from-left {
+	transform: translateX(-50%);
+}
+.from-right {
+	transform: translateX(50%);
+}
+.from-left, .from-right {
+	transition: all 400ms ease;
+}
+.from-left.appear, .from-right.appear {
+	transform: translateX(0);
 }
 @media screen and (min-width: 768px) {
 	header {
