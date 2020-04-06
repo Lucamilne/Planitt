@@ -26,22 +26,16 @@ function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
 }
 
-// rollingText.addEventListener("animationend", function() {
-//     $(".slider").slideUp("slow");
-// })
-
-
 //toggle nav menu
 $(".branded-menu").click(function () {
     toggleNav();
     // toggleContactButton();
 })
 
-//cancel nav menu if filter is clicked. needs refinement. .one("click") etc.
+//cancel nav menu if filter is clicked.
 $("#filter").click(function () {
     toggleNav();
-    //resetNav
-    //reset contact form
+
 }).fadeOut();
 
 function toggleMediaBar() {
@@ -74,8 +68,6 @@ function toggleMenuIcon() {
 $(".product-styles button").click(function () {
     removeActiveClasses();
 
-
-    
     $(this).addClass("active")
 })
 
@@ -118,27 +110,6 @@ $(".column li").hover(function () {
     })
 });
 
-
-//scroll into view animation triggering
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
-
-$(window).scroll(function () {
-    $('.step').each(function () {
-        if (isScrolledIntoView(this) === true) {
-            $(this).addClass('step-animation');
-        }
-    });
-});
-//^ This is a load of bollocks. Change it.
-
 //intersection observer
 const sections = document.querySelectorAll("section");
 const faders = document.querySelectorAll(".fade-in");
@@ -152,7 +123,8 @@ const options = {
 const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
-            return;
+            entry.target.classList.remove("appear");
+            // return;
         } else {
             entry.target.classList.add("appear");
             // appearOnScroll.unobserve(entry.target);
