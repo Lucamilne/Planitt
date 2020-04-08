@@ -20,8 +20,6 @@ var lazyLoadInstance = new LazyLoad({
 // landing animation (logo)
 $("#landing-animation").delay(2000).slideUp(600);
 
-// $("main").delay(3000).fadeIn("slow");
-
 function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
 }
