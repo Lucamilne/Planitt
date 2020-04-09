@@ -38,10 +38,6 @@ body {
 	background-color: #eee;
 	font-family: "Montserrat", sans-serif;
 	transition: background-color 250ms ease;
-	overflow: hidden;
-}
-.desktop {
-	display: none;
 }
 #landing-animation {
 	position: fixed;
@@ -103,14 +99,14 @@ body {
 .logo p:nth-of-type(2) {
 	animation: slideLeft 2s forwards ease, slideDown forwards 2s ease;
 }
-@keyframes highlighter {
+@keyframes fade-in {
 	from {
 	  opacity: 0;
 	}
 	to {
 	  opacity: 1;
 	}
-  }
+}
 @keyframes slideRight {
 	from {
 		left: -100%;
@@ -154,13 +150,12 @@ body {
 
 header {
 	position: fixed;
-	box-sizing: border-box;
 	color: var(--color1);
-	width: 100vw;
+	width: 100%;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	padding: 20px;
+	padding: 20px 0;
 	letter-spacing: 2px;
 	z-index: 10;
 }
@@ -177,6 +172,9 @@ header {
 	text-decoration: none;
 	color: #fff;
 }
+.contact {
+	margin: 0 22px;
+}
 .branded-menu {
 	font-family: "Yantramanav", serif;
 	font-weight: 400 !important;
@@ -190,7 +188,8 @@ header {
 	transition: all 300ms ease;
 }
 .branding {
-	margin: 0 10px;
+	margin: 0 12px;
+	margin-left: 22px;
 	color: inherit;
 }
 .branding strong {
@@ -502,7 +501,7 @@ section .rounded-btn {
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.3);
 }
 .step-container .center {
 	display: flex;
@@ -526,7 +525,6 @@ section .rounded-btn {
 	position: relative;
 	width: 100%;
 	height: auto;
-	transition: background-color 400ms ease;
 	display: flex;
 	justify-content: center;
 }
@@ -556,18 +554,96 @@ h1 {
 }
 #title {
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+	box-sizing: border-box;
+	top: 0;
+	transform: translateY(0);
 	width: 100%;
-	display: flex;
+	display: none;
+	color: #fff;
 	flex-direction: column;
 	align-items: center;
-	background-color: rgba(255, 255, 255, 0.4);
-	padding: 12px 0;
+	justify-content: center;
+	height: 132px;
+}
+#title::before, #title::after {
+	content: "";
+	position: absolute;
+	top: 82px;
+	width: calc(48% - 171px);
+	border-bottom: 2px solid #eee;
+}
+#title::before {
+	left: 0;
+}
+#title::after {
+	right: 0;
 }
 #title .branding {
 	font-size: 4rem;
-	overflow: hidden;
+	letter-spacing: -3px;
+	line-height: 48px;
+	margin-bottom: 12px;
+}
+.promo {
+	display: none;
+	position: absolute;
+	width: 372px;
+	height: 372px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 36px;
+}
+.bordered-message {
+	box-sizing: border-box;
+	border: 4px solid #fff;
+	padding: 36px;
+	height: 100%;
+}
+.bordered-message p {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	color: #fff;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+.bordered-message span {
+	width: 100%;
+	text-align: justify;
+	font-family: 'Abril Fatface', cursive;
+	text-transform: uppercase;
+	word-wrap: none;
+}
+.promo__top, .promo__middle, .promo__bottom, .promo .rounded-btn {
+	animation: fade-in 2s forwards ease;
+	opacity: 0;
+}
+.promo__top {
+	font-size: 61px;
+	line-height: 61px;
+	height: 61px;
+}
+.promo__middle {
+	font-size: 98px;
+	line-height: 98px;
+	height: 98px;
+	animation-delay: 1s;
+}
+.promo__bottom {
+	font-size: 77.5px;
+	line-height: 77.5px;
+	height: 77.5px;
+	animation-delay: 2s;
+}
+.promo .rounded-btn {
+	position: relative;
+	left: 0;
+	top: 17px;
+	animation-delay: 3s;
 }
 #contact-form-container .branding {
 	font-size: 3rem;
@@ -578,7 +654,23 @@ h1 {
 	font-size: 1rem;
 	font-weight: 600;
 	text-align: center;
-	line-height: 2rem;
+	line-height: 1rem;
+}
+#landing-page {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+.video-bg {
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 100%;
+	min-height: 100%;
 }
 .our-service {
 	height: 100%;
@@ -707,7 +799,7 @@ h1 {
 	align-items: center;
 	transition: background-color 0.4s ease, color 0.4s ease;
 }
-.contact-icon .fa-envelope {
+.contact-icon .fa-phone-alt {
 	border-radius: 30px 0 0 30px;
 }
 .contact-icon .fa-linkedin-in {
@@ -755,7 +847,7 @@ footer p {
 main {
 	width: 100%;
 	height: 100vh;
-	overflow: scroll;
+	opacity: 0;
 }
 .index {
 	display: none;
@@ -785,6 +877,9 @@ main {
 .from-left.appear, .from-right.appear {
 	transform: translateX(0);
 }
+.desktop {
+	display: none;
+}
 @media screen and (min-width: 768px) {
 	header {
 		position: absolute;
@@ -796,14 +891,15 @@ main {
 	}
 	.index-container {
 		display: grid;
+		box-sizing:border-box;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(6, 1fr);
-		grid-column-gap: 0;
-		grid-row-gap: 0;
+		gap: 12px;
+		padding: 12px;
 		overflow: hidden;
 		height: 100vh;
-		scroll-snap-align: center;
-		scroll-snap-stop: always
+		/* scroll-snap-align: center;
+		scroll-snap-stop: always */
 	}
 	.desktop {
 		display: block;
@@ -818,7 +914,7 @@ main {
 		overflow: visible;
 	}
 	.carousel__slide label {
-		font-size: 3rem;
+		font-size: 2rem;
 	}
 	.carousel__nav {
 		display: flex;
@@ -826,11 +922,11 @@ main {
 	footer {
 		grid-template-columns: minmax(260px, 1fr) 1.68fr;
 		grid-template-rows: none;
-		scroll-snap-align: center;
-		scroll-snap-stop: always
+		/* scroll-snap-align: center;
+		scroll-snap-stop: always */
 	}
 	#title {
-		display: none;
+		display: flex;
 	}
 	.hero-caption {
 		display: flex;
@@ -904,8 +1000,8 @@ main {
 	}
 	#process .wrapper {
 		height: 100%;
-		padding: 12px;
 		border: none;
+		padding: 0;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(2, 1fr);
 		background-color: #eee;
@@ -932,7 +1028,6 @@ main {
 	}
 	.grid1 {
 		grid-area: 1 / 3 / 6 / 7;
-		height: 100vh;
 	}
 	.grid2 {
 		grid-area: 1 / 1 / 4 / 3;
@@ -942,7 +1037,6 @@ main {
 	}
 	.our-service p:nth-of-type(2) {
 		display: block;
-		margin: 0;
 	}
 	#contact-form {
 		width: 900px;

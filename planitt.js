@@ -8,17 +8,39 @@ if (document.documentElement.clientWidth < 768) {
     isMobile = true;
 }
 
+//conditional loading of video based on client viewport (mobile)
+const video = document.querySelector("video");
+
+if (!isMobile) {
+    video.src="./img/freeuse/space.mp4";
+}
+
 //lazy loading scripts
 var lazyLoadInstance = new LazyLoad({
-    elements_selector: ".hero-image"
+    elements_selector: ".hero-image",
 });
 
 var lazyLoadInstance = new LazyLoad({
     elements_selector: ".carousel__image"
 });
 
-// landing animation (logo)
-$("#landing-animation").delay(2000).slideUp(600);
+var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".gallery__image"
+});
+
+function landingAnimations(duration, transition) {
+    //display: none to logo overlay after duration expires
+    $("#landing-animation").delay(duration).slideUp(transition)
+    //fade in main content after duration expires
+    $("main").delay(duration).animate({opacity: 1}, transition)
+    //start css animation for .promo element
+    $(".promo").delay(duration).fadeIn(transition);
+}
+
+// run landing animation on content load
+$(window).on('load', function (e) {
+    landingAnimations(2000, 600);
+})
 
 function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
@@ -27,7 +49,6 @@ function scrollTo(hash) {
 //toggle nav menu
 $(".branded-menu").click(function () {
     toggleNav();
-    // toggleContactButton();
 })
 
 //cancel nav menu if filter is clicked.
