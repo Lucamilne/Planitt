@@ -12,7 +12,7 @@ if (document.documentElement.clientWidth < 768) {
 const video = document.querySelector("video");
 
 if (!isMobile) {
-    video.src="./img/freeuse/space.mp4";
+    video.src = "./img/freeuse/space.mp4";
 }
 
 //lazy loading scripts
@@ -28,19 +28,29 @@ var lazyLoadInstance = new LazyLoad({
     elements_selector: ".gallery__image"
 });
 
-function landingAnimations(duration, transition) {
-    //display: none to logo overlay after duration expires
-    $("#landing-animation").delay(duration).slideUp(transition)
-    //fade in main content after duration expires
-    $("main").delay(duration).animate({opacity: 1}, transition)
-    //start css animation for .promo element
-    $(".promo").delay(duration).fadeIn(transition);
+var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".index__image"
+});
+
+let landingAnimDuration = setTimeout(contentReadyCheck, 2000);
+
+// check if content is ready
+function contentReadyCheck() {
+    if (document.readyState == 'complete') {
+            revealMain("600");
+    } else {
+        $(window).on('load', function (e) {
+            revealMain("600");           
+        })
+    }
 }
 
-// run landing animation on content load
-$(window).on('load', function (e) {
-    landingAnimations(2000, 600);
-})
+//reveal content
+function revealMain(animationDurationStr) {
+    $("#landing-animation").slideUp(animationDurationStr)
+    $("main").animate({ opacity: 1 }, animationDurationStr)
+    $(".promo").fadeIn(animationDurationStr);
+}
 
 function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
@@ -95,23 +105,23 @@ function removeActiveClasses() {
 }
 
 // Add smooth scrolling to all links
-$("a").on('click', function(event) {
+$("a").on('click', function (event) {
     // Make sure this.hash has a value before overriding default behavior
-  if (this.hash !== "") {
-    // Prevent default anchor click behavior
-    event.preventDefault();
-      // Store hash
-    var hash = this.hash;
-      // Using jQuery's animate() method to add smooth page scroll
-    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 0, function(){
- 
-      // Add hash (#) to URL when done scrolling (default click behavior)
-      window.location.hash = hash;
-    });
-  }
+    if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+        // Store hash
+        var hash = this.hash;
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 0, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+        });
+    }
 });
 
 // kitchen-selector hover label highlighting
@@ -139,7 +149,7 @@ const options = {
     rootMargin: "0px 0px -200px 0px"
 };
 
-const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
             entry.target.classList.remove("appear");
@@ -214,13 +224,13 @@ nextButton.addEventListener("click", () => {
     if (isMobile) {
         return;
     }
-    
+
     let currentSlide = track.querySelector(".current-slide");
     let nextSlide = currentSlide.nextElementSibling;
     const currentDot = dotsNav.querySelector(".current-slide");
     const nextDot = currentDot.nextElementSibling;
     const nextIndex = slides.findIndex(slide => slide === nextSlide);
-    
+
     moveToSlide(track, currentSlide, nextSlide);
     updateDots(currentDot, nextDot);
     hideShowArrows(slides, prevButton, nextButton, nextIndex);
@@ -242,8 +252,8 @@ prevButton.addEventListener("click", () => {
 dotsNav.addEventListener("click", e => {
     const targetDot = e.target.closest("button");
 
-    if(!targetDot) { 
-        return; 
+    if (!targetDot) {
+        return;
     }
 
     const currentSlide = track.querySelector(".current-slide");

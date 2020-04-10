@@ -65,7 +65,7 @@
     <div id="filter"></div>
     <main>
       <section id="landing-page">
-        <div id="title" class="desktop">
+        <div id="title">
           <div class="branding"><strong>Plan</strong><span>itt</span></div>
           <h4 class="slogan">Kitchens designed and supplied, for you.</h4>
         </div>
@@ -88,10 +88,10 @@
       <div class="index-container">
         <div class="hero grid1">
           <div class="hero-caption">
-            <div class="center">
-              <h1><span>Kitchens & </span><span>Living Spaces</span></h1>
+            <div class="center fade-in">
+              <h1><span>DESIGN & </span><span>SHOWCASE</span></h1>
               <p>
-                Select from a host of doors and cabinets made in Britain.
+                Our photo-realistic 3D images bring your designs to life
               </p>
             </div>
           </div>
@@ -107,16 +107,16 @@
           />
         </div>
         <section class="our-service grid2" id="service">
-          <div class="center slide-in fade-in from-left">
+          <div class="center">
             <h3>Service</h3>
             <hr />
-            <p>
+            <p class="slide-in fade-in from-left">
               With our expertise and state-of-the-art design software, we enable
               you to see your dream kitchen before it becomes a reality and
               provide the high-quality furniture it deserves at an affordable
               price.
             </p>
-            <p>
+            <p class="slide-in fade-in from-left">
               Whether you're planning a kitchen or developing a new space, with
               our photo-realistic visuals, you'll know that you are making the
               right decisions.
@@ -127,7 +127,16 @@
           </div>
         </section>
         <section class="index grid3">
-          <span>1/3</span>
+          <img
+                  class="index__image"
+                  data-src="img/freeuse/mug_400.png"
+                  data-srcset="img/freeuse/mug_400.png 400w,
+                                    img/freeuse/mug_400.png 768w,
+                                    img/freeuse/mug_w_854.png 1200w"
+                  data-sizes="(min-width: 768px) 40vw, 100vw"
+                  alt="Mug"
+                  draggable="false"
+                />
         </section>
       </div>
       <div class="index-container">
@@ -415,21 +424,17 @@
             <i class="fas fa-angle-down"></i>
           </div>
         </section>
-        <section id="book-consultation" class="mobile">
-          <div class="overlay">
-            <h3>Book a free consultation</h3>
-            <hr />
-            <p>
-              Let's talk through your requirements with a free, no obligation
-              consultation.
-            </p>
-            <button class="rounded-btn">
-              Book
-            </button>
-          </div>
-        </section>
         <section class="index grid6">
-          <span>2/3</span>
+          <img
+                  class="index__image"
+                  data-src="img/freeuse/plant_400.png"
+                  data-srcset="img/freeuse/plant_400.png 400w,
+                                    img/freeuse/plant_400.png 768w,
+                                    img/freeuse/plant_w_854.png 1200w"
+                  data-sizes="(min-width: 768px) 40vw, 100vw"
+                  alt="Plant"
+                  draggable="false"
+                />
         </section>
       </div>
       <div class="index-container">
@@ -502,9 +507,31 @@
           </div>
         </section>
         <section class="index grid3">
-          <span>3/3</span>
+          <img
+                  class="index__image"
+                  data-src="img/freeuse/plant-b_ver2_400.png"
+                  data-srcset="img/freeuse/plant-b_ver2_400.png 400w,
+                                    img/freeuse/plant-b_ver2_400.png 768w,
+                                    img/freeuse/plant-b_w_854.png 1200w"
+                  data-sizes="(min-width: 768px) 40vw, 100vw"
+                  alt="Plant"
+                  draggable="false"
+                />
         </section>
       </div>
+      <section id="book-consultation" class="mobile">
+        <div class="overlay">
+          <h3>Book a free consultation</h3>
+          <hr />
+          <p>
+            Let's talk through your requirements with a free, no obligation
+            consultation.
+          </p>
+          <button class="rounded-btn">
+            Book
+          </button>
+        </div>
+      </section>
       <footer>
         <div class="branding-container">
           <div class="branding">
