@@ -2,6 +2,25 @@ const rollingText = document.querySelector(".rolling-text p");
 const slide = document.querySelector(".slide");
 const body = document.body;
 const images = document.querySelectorAll("[data-src]");
+let kitchenImages = [
+    "img/Products/Alpina1_800.png",
+    "img/Products/Belsay1_800.png",
+    "img/Products/Broadoak1_800.png",
+    "img/Products/Clarendon1_800.png",
+    "img/Products/Ellerton1_800.png",
+    "img/Products/Fitzroy1_800",
+    "img/Products/Hunton1_800",
+    "img/Products/Lichfield1_800",
+    "img/Products/Milbourne1_800",
+    "img/Products/Mode1_800.png",
+    "img/Products/Mornington_Beaded1_800.png",
+    "img/Products/Mornington_Shaker1_800.png",
+    "img/Products/Porter1_800.png",
+    "img/Products/Remo1_800.png",
+    "img/Products/Stanhope1_800.png",
+    "img/Products/Tomba1_800.png",
+    "img/Products/Unity1_800.png"
+]
 let isMobile = false;
 
 if (document.documentElement.clientWidth < 768) {
@@ -17,11 +36,7 @@ if (!isMobile) {
 
 //lazy loading scripts
 var lazyLoadInstance = new LazyLoad({
-    elements_selector: ".hero-image",
-});
-
-var lazyLoadInstance = new LazyLoad({
-    elements_selector: ".carousel__image"
+    elements_selector: ".render-image, .carousel__image"
 });
 
 var lazyLoadInstance = new LazyLoad({
@@ -37,24 +52,28 @@ let landingAnimDuration = setTimeout(contentReadyCheck, 2000);
 // check if content is ready
 function contentReadyCheck() {
     if (document.readyState == 'complete') {
-            revealMain("600");
+            revealMain(600);
     } else {
         $(window).on('load', function (e) {
-            revealMain("600");           
+            revealMain(600);           
         })
     }
 }
 
 //reveal content
-function revealMain(animationDurationStr) {
-    $("#landing-animation").slideUp(animationDurationStr)
-    $("main").animate({ opacity: 1 }, animationDurationStr)
-    $(".promo").fadeIn(animationDurationStr);
+function revealMain(animationDuration) {
+    $("#landing-animation").slideUp(animationDuration)
+    $("main").animate({ opacity: 1 }, animationDuration)
+    $(".promo").fadeIn(animationDuration);
 }
 
 function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
 }
+
+//fisher-yates shuffle
+
+let order = frames.length - 1;
 
 //toggle nav menu
 $(".branded-menu").click(function () {
@@ -64,7 +83,6 @@ $(".branded-menu").click(function () {
 //cancel nav menu if filter is clicked.
 $("#filter").click(function () {
     toggleNav();
-
 }).fadeOut();
 
 function toggleMediaBar() {

@@ -296,7 +296,7 @@ h6 {
 	height: 100vw;
 	width: 100%;
 }
-.carousel__image, .hero-image, .index__image {
+.carousel__image, .render-image, .index__image {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
@@ -521,14 +521,14 @@ section .rounded-btn {
 	transition: transform 500ms ease;
 	width: 100%;
 }
-.hero {
+.render {
 	position: relative;
 	width: 100%;
 	height: auto;
 	display: flex;
 	justify-content: center;
 }
-.hero-caption {
+.render-caption {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -537,7 +537,7 @@ section .rounded-btn {
 	background-color: rgba(0, 0, 0, 0.25);
 	text-align: right;
 }
-.hero-caption .center {
+.render-caption .center {
 	position: absolute;
 	top: 56px;
 	right: 56px;
@@ -551,7 +551,7 @@ h1 {
 h1 span:nth-of-type(1) {
 	font-size: 69.5px;
 }
-.hero-caption p {
+.render-caption p {
 	font-size: 18px;
 	width: 350px;
 }
@@ -589,10 +589,11 @@ h1 span:nth-of-type(1) {
 }
 #landing-page {
 	position: relative;
-	height: 444px;
+	height: 100vh;
 	width: 100%;
 	background: #222;
 	overflow: hidden;
+	background: rgba(0, 0, 0, 0.3);
 }
 .promo {
 	display: none;
@@ -601,12 +602,13 @@ h1 span:nth-of-type(1) {
 	height: 372px;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) scale(0.7);
 	background-color: rgba(0, 0, 0, 0.5);
 	padding: 36px;
 }
 .bordered-message {
 	box-sizing: border-box;
+	border: 4px solid #fff;
 	padding: 36px;
 	height: 100%;
 }
@@ -665,7 +667,7 @@ h1 span:nth-of-type(1) {
 	text-align: center;
 	line-height: 1rem;
 }
-.video-bg {
+.video-bg, .hero-image {
 	position: absolute;
 	z-index: -1;
 	top: 50%;
@@ -893,12 +895,8 @@ main {
 		scroll-snap-points-y: repeat(100vh);
 		scroll-snap-type: y mandatory;
 	}
-	#landing-page {
-		background: rgba(0, 0, 0, 0.3);
-		height: 100vh;
-	}
-	.bordered-message {
-		border: 4px solid #fff;
+	.promo {
+		transform: translate(-50%, -50%) scale(1);
 	}
 	.index-container {
 		display: grid;
@@ -939,7 +937,7 @@ main {
 	#title {
 		display: flex;
 	}
-	.hero-caption {
+	.render-caption {
 		display: block;
 	}
 	.index {
