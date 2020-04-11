@@ -2,25 +2,6 @@ const rollingText = document.querySelector(".rolling-text p");
 const slide = document.querySelector(".slide");
 const body = document.body;
 const images = document.querySelectorAll("[data-src]");
-let kitchenImages = [
-    "img/Products/Alpina1_800.png",
-    "img/Products/Belsay1_800.png",
-    "img/Products/Broadoak1_800.png",
-    "img/Products/Clarendon1_800.png",
-    "img/Products/Ellerton1_800.png",
-    "img/Products/Fitzroy1_800",
-    "img/Products/Hunton1_800",
-    "img/Products/Lichfield1_800",
-    "img/Products/Milbourne1_800",
-    "img/Products/Mode1_800.png",
-    "img/Products/Mornington_Beaded1_800.png",
-    "img/Products/Mornington_Shaker1_800.png",
-    "img/Products/Porter1_800.png",
-    "img/Products/Remo1_800.png",
-    "img/Products/Stanhope1_800.png",
-    "img/Products/Tomba1_800.png",
-    "img/Products/Unity1_800.png"
-]
 let isMobile = false;
 
 if (document.documentElement.clientWidth < 768) {
@@ -43,19 +24,15 @@ var lazyLoadInstance = new LazyLoad({
     elements_selector: ".gallery__image"
 });
 
-var lazyLoadInstance = new LazyLoad({
-    elements_selector: ".index__image"
-});
-
 let landingAnimDuration = setTimeout(contentReadyCheck, 2000);
 
 // check if content is ready
 function contentReadyCheck() {
     if (document.readyState == 'complete') {
-            revealMain(600);
+        revealMain(600);
     } else {
         $(window).on('load', function (e) {
-            revealMain(600);           
+            revealMain(600);
         })
     }
 }
