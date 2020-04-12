@@ -12,6 +12,9 @@
 	padding: 0;
 	margin: 0;
 }
+*:focus {
+    outline: none;
+}
 a, u {
 	text-decoration: none;
 	color: inherit;

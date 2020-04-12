@@ -14,14 +14,14 @@ if (!isMobile) {
     //conditional loading of video based on client viewport (mobile)
     video.src = "./img/freeuse/space.mp4";
 
-    $(window).bind('mousewheel', function(event) {
+    //throttled scroll event
+    $(window).bind('mousewheel', _.throttle(function(event) {
         if (event.originalEvent.wheelDelta >= 0) {
             scrollUp();
-        }
-        else {
+        } else {
             scrollDown();
         }
-    });
+    }, 1000));
 }
 
 //lazy loading scripts
@@ -41,7 +41,7 @@ function contentReadyCheck() {
         revealMain(600);
     } else {
         $(window).on('load', function (e) {
-            revealMain(600);
+        revealMain(600);
         })
     }
 }
