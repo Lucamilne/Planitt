@@ -8,11 +8,20 @@ if (document.documentElement.clientWidth < 768) {
     isMobile = true;
 }
 
-//conditional loading of video based on client viewport (mobile)
 const video = document.querySelector("video");
 
 if (!isMobile) {
+    //conditional loading of video based on client viewport (mobile)
     video.src = "./img/freeuse/space.mp4";
+
+    $(window).bind('mousewheel', function(event) {
+        if (event.originalEvent.wheelDelta >= 0) {
+            scrollUp();
+        }
+        else {
+            scrollDown();
+        }
+    });
 }
 
 //lazy loading scripts
@@ -260,3 +269,35 @@ dotsNav.addEventListener("click", e => {
     updateDots(currentDot, targetDot);
     hideShowArrows(slides, prevButton, nextButton, targetIndex);
 });
+
+//scroll functions
+function scrollUp() {  
+    let currentSegment = document.querySelector(".current-segment");
+    const prevSegment = currentSegment.previousElementSibling;
+
+    if (currentSegment.previousElementSibling === null) {
+        // if no prev element exists
+        return;
+    } else {
+        currentSegment.previousElementSibling.scrollIntoView();
+        updateCurrentSegment(currentSegment, prevSegment)
+    }
+}
+
+function scrollDown() {
+    let currentSegment = document.querySelector(".current-segment");
+    const nextSegment = currentSegment.nextElementSibling;
+
+    if (currentSegment.nextElementSibling === null) {
+        // if no next element exists
+        return;
+    } else {
+        currentSegment.nextElementSibling.scrollIntoView();
+        updateCurrentSegment(currentSegment, nextSegment)
+    }
+}
+
+function updateCurrentSegment(currentSegment, targetSegment) {
+    currentSegment.classList.remove("current-segment");
+    targetSegment.classList.add("current-segment");
+}
