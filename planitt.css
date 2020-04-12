@@ -403,7 +403,7 @@ h6 {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	top: 12px;
-	left: 0;
+	right: 0;
 	padding: 2px 4px 0 2px;
 	transition: transform 250ms ease-out;
 }
@@ -538,7 +538,7 @@ section .rounded-btn {
 }
 .render-caption .center {
 	position: absolute;
-	top: 56px;
+	top: 64px;
 	right: 56px;
 	width: 350px;
 	height: auto;
@@ -886,9 +886,6 @@ main {
 	display: none;
 }
 @media screen and (min-width: 768px) {
-	header {
-		position: absolute;
-	}
 	main {
 		overflow: hidden;
 		scroll-behavior: smooth;
@@ -905,8 +902,6 @@ main {
 		padding: 12px;
 		overflow: hidden;
 		height: 100vh;
-		/* scroll-snap-align: center;
-		scroll-snap-stop: always */
 	}
 	.desktop {
 		display: block;
@@ -929,8 +924,6 @@ main {
 	footer {
 		grid-template-columns: minmax(260px, 1fr) 1.68fr;
 		grid-template-rows: none;
-		/* scroll-snap-align: center;
-		scroll-snap-stop: always */
 	}
 	#title {
 		display: flex;

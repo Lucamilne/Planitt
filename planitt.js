@@ -57,10 +57,6 @@ function scrollTo(hash) {
     document.getElementById(`${hash}`).scrollIntoView();
 }
 
-//fisher-yates shuffle
-
-let order = frames.length - 1;
-
 //toggle nav menu
 $(".branded-menu").click(function () {
     toggleNav();
@@ -133,7 +129,7 @@ $(".column li").hover(function () {
     $(this).children("label").css({
         "background-color": "rgba(255,255,255,0.5",
         "color": "#222",
-        "transform": "translate(10px, 0)"
+        "transform": "translate(-12px, 0)"
     })
 }, function () {
     $(this).children("label").css({
