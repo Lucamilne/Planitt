@@ -629,7 +629,7 @@ h1 span:nth-of-type(1) {
 	text-align: justify;
 	font-family: 'Abril Fatface', cursive;
 	text-transform: uppercase;
-	word-wrap: none;
+	text-size-adjust: none;
 }
 .promo__top, .promo__middle, .promo__bottom, .promo .rounded-btn {
 	animation: fade-in 2s forwards ease;
