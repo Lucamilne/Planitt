@@ -160,11 +160,12 @@ header {
 	padding: 20px 0;
 	letter-spacing: 2px;
 	z-index: 10;
+	color: #fff;
 }
 .rounded-btn {
 	font-size: 1.2rem;
 	padding: 9px 25px;
-	border: 1px solid #fff;
+	border: 1px solid;
 	border-radius: 50px;
 	background-color: transparent;
 	cursor: pointer;
@@ -172,7 +173,7 @@ header {
 	letter-spacing: 2px;
 	text-transform: inherit;
 	text-decoration: none;
-	color: #fff;
+	color: inherit;
 }
 .contact {
 	margin: 0 22px;
@@ -186,7 +187,6 @@ header {
 	margin-right: auto;
 	font-size: 2em;
 	text-decoration: none;
-	color: #fff;
 	transition: all 300ms ease;
 }
 .branding {
@@ -255,6 +255,7 @@ nav {
 }
 .rounded-btn:hover {
 	color: #222;
+	border: 1px solid #fff;
 	background-color: #fff;
 }
 section {
@@ -647,10 +648,11 @@ h1 span:nth-of-type(1) {
 	animation-delay: 1s;
 }
 .promo__bottom {
-	font-size: 77.5px;
-	line-height: 77.5px;
-	height: 77.5px;
+	font-size: 77px;
+	line-height: 77px;
+	height: 77px;
 	animation-delay: 2s;
+	overflow: hidden;
 }
 .promo .rounded-btn {
 	position: relative;

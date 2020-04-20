@@ -16,13 +16,29 @@ if (!isMobile) {
     video.src = "./img/freeuse/space.mp4";
 
     //throttled scroll event
-    $(window).bind('mousewheel', _.throttle(function(event) {
+    $(window).bind('wheel', _.debounce(function(event) {
         if (event.originalEvent.wheelDelta >= 0) {
             scrollUp();
         } else {
             scrollDown();
+            console.log("fired")
         }
-    }, 1200));
+    }, 200));
+
+    //the above, but for tablet devices with touchstart/touchend
+    var touchStart;
+    $(document).bind('touchstart', function (e){
+        touchStart = e.originalEvent.touches[0].clientY;
+    });
+
+    $(document).bind('touchend', function (e){
+            var touchEnd = e.originalEvent.changedTouches[0].clientY;
+        if(touchStart > touchEnd+5){
+            scrollDown();
+        } else if(touchStart < touchEnd-5){
+            scrollUp();
+        }
+    });
 }
 
 //lazy loading scripts
@@ -144,10 +160,12 @@ $(".column li").hover(function () {
 const sections = document.querySelectorAll("section");
 const faders = document.querySelectorAll(".fade-in");
 const sliders = document.querySelectorAll(".slide-in");
+const header = document.querySelector("header");
+const mediaBar = document.getElementById("media-bar")
 
 const options = {
     threshold: 0,
-    rootMargin: "0px 0px -200px 0px"
+    rootMargin: "0px 0px -100px 0px"
 };
 
 const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
