@@ -42,15 +42,13 @@ if (!isMobile) {
 }
 
 //lazy loading scripts
-// var lazyLoadInstance = new LazyLoad({
-//     elements_selector: ".render-image, .carousel__image"
-// });
 
 var lazyLoadInstance = new LazyLoad({
     elements_selector: ".gallery__image"
 });
 
 var lazyLoadInstance = new LazyLoad({
+    threshold: "500",
     container: document.querySelector(".render-showcase__container")
 });
 
@@ -148,21 +146,6 @@ $("a").on('click', function (event) {
         });
     }
 });
-
-// kitchen-selector hover label highlighting
-// $(".column li").hover(function () {
-//     $(this).children("label").css({
-//         "background-color": "rgba(255,255,255,0.5",
-//         "color": "#222",
-//         "transform": "translate(-12px, 0)"
-//     })
-// }, function () {
-//     $(this).children("label").css({
-//         "background-color": "rgba(0, 0, 0, 0.3)",
-//         "color": "#eee",
-//         "transform": "translate(0,0)"
-//     })
-// });
 
 //intersection observer
 const sections = document.querySelectorAll("section");
