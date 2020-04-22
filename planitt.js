@@ -42,12 +42,20 @@ if (!isMobile) {
 }
 
 //lazy loading scripts
-var lazyLoadInstance = new LazyLoad({
-    elements_selector: ".render-image, .carousel__image"
-});
+// var lazyLoadInstance = new LazyLoad({
+//     elements_selector: ".render-image, .carousel__image"
+// });
 
 var lazyLoadInstance = new LazyLoad({
     elements_selector: ".gallery__image"
+});
+
+var lazyLoadInstance = new LazyLoad({
+    container: document.querySelector(".render-showcase__container")
+});
+
+var lazyLoadInstance = new LazyLoad({
+    container: document.querySelector(".carousel__track-container")
 });
 
 let landingAnimDuration = setTimeout(contentReadyCheck, 2000);
