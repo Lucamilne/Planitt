@@ -304,79 +304,14 @@ h6 {
 	width: 100%;
 	object-fit: cover;
 }
-.carousel__track-container {
-	position: relative;
-	height: 100%;
-}
-.carousel__track {
-	position: relative;
-	height: 100%;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	transition: transform 800ms ease;
-	overflow-x: scroll;
-	scroll-snap-type: inline mandatory;
-}
-
-.carousel__slide {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	scroll-snap-align: center;
-}
-.carousel__button {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	background: rgba(0, 0, 0, 0.3);
-	height: 40px;
-	width: 40px;
-	border-radius: 50%;
-	border: 0;
-	cursor: pointer;
-}
-.carousel__button, .carousel__indicator {
-	outline: none;
-}
-.carousel__button-left {
-	left: 32px;
-}
-.carousel__button-right {
-	right: 32px;
-}
-.carousel__button i {
-	color: #eee;
-}
-.carousel__nav {
-	position: relative;
+.carousel__slide img {
 	box-sizing: border-box;
-	width: 100%;
-	bottom: 24px;
-	justify-content: space-evenly;
 }
-.carousel__indicator {
-	cursor: pointer;
-	font-family: inherit;
-	border: 0;
-	border-radius: 5px;
-	width: 5%;
-	height: 5px;
-	background-color: rgba(255, 255, 255, 0.3);
-	padding: 0;
+.swiper-pagination-bullet-active {
+	background-color: #fff;
 }
-.carousel__indicator.current-slide {
-	background-color: #eee;
-}
-.swipe {
-	position: absolute;
-	display: flex;
-	justify-content: space-around;
-	width: 56px;
-	bottom: 12px;
-	left: 50%;
-	transform: translateX(-50%);
-	color: #eee;
+.swiper-button-next, .swiper-button-prev {
+	color: #fff;
 }
 .product-styles, .our-process {
 	background-color: var(--color4);
@@ -402,14 +337,11 @@ h6 {
 	position: absolute;
 	font-size: 1.5rem;
 	font-family: "Libre Baskerville", serif;
-	background-color: rgba(0, 0, 0, 0.3);
-	color: #eee;
+	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	top: 12px;
-	right: 0;
-	padding: 2px 4px 0 2px;
-	transition: transform 250ms ease-out;
+	right: 12px;
 }
 #book-consultation {
 	padding: 0;
@@ -530,15 +462,17 @@ section .rounded-btn {
 	height: auto;
 	display: flex;
 	justify-content: center;
+	overflow: hidden;
 }
 .render-caption {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	color: #eee;
+	color: #fff;
 	display: none;
-	background-color: rgba(0, 0, 0, 0.25);
+	background-color: rgba(0, 0, 0, 0.1);
 	text-align: right;
+	z-index: 2;
 }
 .render-caption .center {
 	position: absolute;
@@ -866,7 +800,7 @@ main {
 	letter-spacing: 1.1rem;
 	font-weight: 900;
 	padding: 0;
-
+	background-color: #222;
 }
 .fade-in {
 	opacity: 0;
@@ -917,14 +851,8 @@ main {
 	.carousel {
 		height: 100%;
 	}
-	.carousel__track {
-		overflow: visible;
-	}
 	.carousel__slide label {
 		font-size: 2rem;
-	}
-	.carousel__nav {
-		display: flex;
 	}
 	footer {
 		grid-template-columns: minmax(260px, 1fr) 1.68fr;
@@ -1056,4 +984,41 @@ main {
 	.grid6 {
 		grid-area: 4 / 5 / 6 / 7;
 	}
+}
+
+.portfolio-lightbox {
+	position: fixed;
+	top: 0; 
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+}
+.portfolio-container {
+	max-width: 75%;
+	position: relative;
+	box-shadow: var(--box-shadow);
+}
+.close {
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	background: red;
+	right: 32px;
+	top: 32px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 11;
+}
+
+.close::after {
+	content: "X";
+	color: #fff;
+	font-weight: 700;
 }

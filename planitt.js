@@ -16,26 +16,26 @@ if (!isMobile) {
     video.src = "./img/freeuse/space.mp4";
 
     //throttled scroll event
-    $(window).bind('wheel', _.debounce(function(event) {
+    $(window).bind('wheel', _.debounce(function (event) {
         if (event.originalEvent.wheelDelta >= 0) {
             scrollUp();
         } else {
             scrollDown();
-            console.log("fired")
         }
-    }, 200));
+    }, 600));
 
     //the above, but for tablet devices with touchstart/touchend
-    var touchStart;
-    $(document).bind('touchstart', function (e){
+    let touchStart;
+
+    $(document).bind('touchstart', function (e) {
         touchStart = e.originalEvent.touches[0].clientY;
     });
 
-    $(document).bind('touchend', function (e){
-            var touchEnd = e.originalEvent.changedTouches[0].clientY;
-        if(touchStart > touchEnd+5){
+    $(document).bind('touchend', function (e) {
+        var touchEnd = e.originalEvent.changedTouches[0].clientY;
+        if (touchStart > touchEnd + 5) {
             scrollDown();
-        } else if(touchStart < touchEnd-5){
+        } else if (touchStart < touchEnd - 5) {
             scrollUp();
         }
     });
@@ -58,7 +58,7 @@ function contentReadyCheck() {
         revealMain(600);
     } else {
         $(window).on('load', function (e) {
-        revealMain(600);
+            revealMain(600);
         })
     }
 }
@@ -142,19 +142,19 @@ $("a").on('click', function (event) {
 });
 
 // kitchen-selector hover label highlighting
-$(".column li").hover(function () {
-    $(this).children("label").css({
-        "background-color": "rgba(255,255,255,0.5",
-        "color": "#222",
-        "transform": "translate(-12px, 0)"
-    })
-}, function () {
-    $(this).children("label").css({
-        "background-color": "rgba(0, 0, 0, 0.3)",
-        "color": "#eee",
-        "transform": "translate(0,0)"
-    })
-});
+// $(".column li").hover(function () {
+//     $(this).children("label").css({
+//         "background-color": "rgba(255,255,255,0.5",
+//         "color": "#222",
+//         "transform": "translate(-12px, 0)"
+//     })
+// }, function () {
+//     $(this).children("label").css({
+//         "background-color": "rgba(0, 0, 0, 0.3)",
+//         "color": "#eee",
+//         "transform": "translate(0,0)"
+//     })
+// });
 
 //intersection observer
 const sections = document.querySelectorAll("section");
@@ -202,91 +202,8 @@ $(".contact-icon i").hover(function () {
     })
 })
 
-//carousel
-const track = document.querySelector(".carousel__track");
-const slides = Array.from(track.children);
-const nextButton = document.querySelector(".carousel__button-right");
-const prevButton = document.querySelector(".carousel__button-left");
-const slideWidth = slides[0].getBoundingClientRect().width;
-const dotsNav = document.querySelector(".carousel__nav")
-const dots = Array.from(dotsNav.children);
-
-slides.forEach((slide, index) => {
-    slide.style.left = `${slideWidth * index}px`;
-})
-
-const moveToSlide = (track, currentSlide, targetSlide) => {
-    track.style.transform = `translateX(-${targetSlide.style.left})`
-    currentSlide.classList.remove("current-slide");
-    targetSlide.classList.add("current-slide")
-}
-
-const updateDots = (currentDot, targetDot) => {
-    currentDot.classList.remove("current-slide");
-    targetDot.classList.add("current-slide");
-}
-
-const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
-    if (targetIndex === 0) {
-        prevButton.classList.add("is-hidden");
-        nextButton.classList.remove("is-hidden");
-    } else if (targetIndex === slides.length - 1) {
-        prevButton.classList.remove("is-hidden");
-        nextButton.classList.add("is-hidden");
-    } else {
-        prevButton.classList.remove("is-hidden")
-        nextButton.classList.remove("is-hidden")
-    }
-}
-
-nextButton.addEventListener("click", () => {
-    if (isMobile) {
-        return;
-    }
-
-    let currentSlide = track.querySelector(".current-slide");
-    let nextSlide = currentSlide.nextElementSibling;
-    const currentDot = dotsNav.querySelector(".current-slide");
-    const nextDot = currentDot.nextElementSibling;
-    const nextIndex = slides.findIndex(slide => slide === nextSlide);
-
-    moveToSlide(track, currentSlide, nextSlide);
-    updateDots(currentDot, nextDot);
-    hideShowArrows(slides, prevButton, nextButton, nextIndex);
-});
-
-prevButton.addEventListener("click", () => {
-    let currentSlide = track.querySelector(".current-slide");
-    let prevSlide = currentSlide.previousElementSibling;
-    const currentDot = dotsNav.querySelector(".current-slide");
-    const prevDot = currentDot.previousElementSibling;
-    const prevIndex = slides.findIndex(slide => slide === prevSlide);
-
-
-    moveToSlide(track, currentSlide, prevSlide);
-    updateDots(currentDot, prevDot);
-    hideShowArrows(slides, prevButton, nextButton, prevIndex);
-})
-
-dotsNav.addEventListener("click", e => {
-    const targetDot = e.target.closest("button");
-
-    if (!targetDot) {
-        return;
-    }
-
-    const currentSlide = track.querySelector(".current-slide");
-    const currentDot = dotsNav.querySelector(".current-slide");
-    const targetIndex = dots.findIndex(dot => dot === targetDot)
-    const targetSlide = slides[targetIndex];
-
-    moveToSlide(track, currentSlide, targetSlide);
-    updateDots(currentDot, targetDot);
-    hideShowArrows(slides, prevButton, nextButton, targetIndex);
-});
-
 //scroll functions
-function scrollUp() {  
+function scrollUp() {
     let currentSegment = document.querySelector(".current-segment");
     const prevSegment = currentSegment.previousElementSibling;
 
@@ -302,9 +219,10 @@ function scrollUp() {
 function scrollDown() {
     let currentSegment = document.querySelector(".current-segment");
     const nextSegment = currentSegment.nextElementSibling;
+    const footer = document.querySelector("footer");
 
     if (currentSegment.nextElementSibling === null) {
-        // if no next element exists
+        //if no next element exists
         return;
     } else {
         currentSegment.nextElementSibling.scrollIntoView();
@@ -316,3 +234,34 @@ function updateCurrentSegment(currentSegment, targetSegment) {
     currentSegment.classList.remove("current-segment");
     targetSegment.classList.add("current-segment");
 }
+
+//carousel
+var swiper = new Swiper('.carousel__track-container', {
+    spaceBetween: 12,
+    grabCursor: true,
+    // autoplay: {
+    //     delay: 5000,
+    //     disableOnInteraction: true,
+    // },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
+var swiper = new Swiper('.render-showcase__container', {
+    spaceBetween: 12,
+    grabCursor: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+});
+
+// $(".carousel__slide").click(function() {
+//     console.log($(this).children("label").text())
+// })
