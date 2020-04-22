@@ -42,11 +42,6 @@ if (!isMobile) {
 }
 
 //lazy loading scripts
-
-var lazyLoadInstance = new LazyLoad({
-    elements_selector: ".gallery__image"
-});
-
 var lazyLoadInstance = new LazyLoad({
     threshold: "500",
     container: document.querySelector(".render-showcase__container")

@@ -986,39 +986,10 @@ main {
 	}
 }
 
-.portfolio-lightbox {
-	position: fixed;
-	top: 0; 
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: rgba(0, 0, 0, 0.5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 10;
-}
-.portfolio-container {
-	max-width: 75%;
-	position: relative;
-	box-shadow: var(--box-shadow);
-}
-.close {
-	position: absolute;
-	width: 32px;
-	height: 32px;
-	background: red;
-	right: 32px;
-	top: 32px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 11;
+.egger, .hettich, .made-in-britain {
+	width: 300px;
 }
 
-.close::after {
-	content: "X";
-	color: #fff;
-	font-weight: 700;
+.hettich, .made-in-britain {
+	height: 175px;
 }
