@@ -225,10 +225,6 @@ function updateCurrentSegment(currentSegment, targetSegment) {
 var swiper = new Swiper('.carousel__track-container', {
     spaceBetween: 12,
     grabCursor: true,
-    // autoplay: {
-    //     delay: 5000,
-    //     disableOnInteraction: true,
-    // },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -242,12 +238,9 @@ var swiper = new Swiper('.carousel__track-container', {
 var swiper = new Swiper('.render-showcase__container', {
     spaceBetween: 12,
     grabCursor: true,
+    freeMode: true,
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
     },
 });
-
-// $(".carousel__slide").click(function() {
-//     console.log($(this).children("label").text())
-// })

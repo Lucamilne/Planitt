@@ -443,6 +443,9 @@ section .rounded-btn {
 	flex-direction: column;
 	align-items: center;
 }
+.step:hover {
+	opacity: 0;
+}
 .wrapper p {
 	font-size: 0.8rem;
 	text-align: center;
@@ -641,6 +644,19 @@ h1 span:nth-of-type(1) {
 		transform: translate(0, 0);
 	}
 }
+.introduction {
+	display: flex;
+	color: #fff;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.introduction .center {
+	width: 60%;
+}
+.introduction button {
+	margin: 32px;
+}
 #contact-form-container {
 	position: fixed;
 	box-sizing: border-box;
@@ -798,9 +814,9 @@ main {
 	align-items: center;
 	font-size: 5rem;
 	color: #ccc;
-	letter-spacing: 1.1rem;
 	font-weight: 900;
 	padding: 0;
+	text-transform: uppercase;
 }
 .fade-in {
 	opacity: 0;
@@ -815,10 +831,17 @@ main {
 .from-right {
 	transform: translateX(10%);
 }
-.from-left, .from-right {
+.from-below {
+	transform: translateY(50%);
+}
+.from-above {
+	transform: translateY(-50%);
+
+}
+.from-left, .from-right, .from-below, .from-above {
 	transition: all 600ms ease;
 }
-.from-left.appear, .from-right.appear {
+.from-left.appear, .from-right.appear, .from-below.appear, .from-above.appear {
 	transform: translateX(0);
 }
 .desktop {
@@ -828,6 +851,9 @@ main {
 	main {
 		overflow: hidden;
 		scroll-behavior: smooth;
+	}
+	.introduction {
+		height: 100vh;
 	}
 	.promo {
 		transform: translate(-50%, -50%) scale(1);
@@ -866,6 +892,9 @@ main {
 	}
 	.index {
 		display: flex;
+	}
+	.index span {
+		overflow: hidden;
 	}
 	.grid1 {
 		grid-area: 1 / 1 / 5 / 6;
