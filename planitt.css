@@ -812,11 +812,14 @@ main {
 	display: none;
 	justify-content: center;
 	align-items: center;
-	font-size: 86px;
-	color: #ccc;
+	font-size: 164px;
+	background-color: #ccc;
 	font-weight: 900;
 	padding: 0;
 	text-transform: uppercase;
+}
+.index span {
+	color: #fff;
 }
 .fade-in {
 	opacity: 0;
