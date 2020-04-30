@@ -473,7 +473,7 @@ section .rounded-btn {
 	height: 100%;
 	color: #fff;
 	display: none;
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.15);
 	text-align: right;
 	z-index: 2;
 }
@@ -494,7 +494,7 @@ h1 span:nth-of-type(1) {
 }
 .render-caption p {
 	font-size: 18px;
-	width: 350px;
+	text-align: center;
 }
 #title {
 	position: absolute;
@@ -812,7 +812,7 @@ main {
 	display: none;
 	justify-content: center;
 	align-items: center;
-	font-size: 5rem;
+	font-size: 86px;
 	color: #ccc;
 	font-weight: 900;
 	padding: 0;
