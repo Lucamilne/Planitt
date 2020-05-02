@@ -262,7 +262,6 @@ section {
 	position: relative;
 	box-sizing: border-box;
 	height: auto;
-	background-color: #eee;
 	color: #222;
 	padding: 56px 0;
 	overflow: hidden;
@@ -645,13 +644,8 @@ h1 span:nth-of-type(1) {
 	}
 }
 .introduction {
+	background-color: rgba(0, 0, 0, 0.3);
 	color: #fff;
-	/* background-image: url(./img/freeuse/who_we_are.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover; */
-	/* box-sizing: border-box;
-	border: 12px solid #eee; */
 }
 .introduction .center {
 	display: flex;
@@ -663,7 +657,7 @@ h1 span:nth-of-type(1) {
 .introduction button {
 	margin: 32px;
 }
-.introduction .center p {
+.introduction .center ul {
 	width: 60%;
 }
 #contact-form-container {
@@ -861,8 +855,11 @@ main {
 }
 @media screen and (min-width: 768px) {
 	main {
-		overflow: hidden;
-		scroll-behavior: smooth;
+		overflow-Y: scroll;
+		scroll-snap-type: y mandatory;
+	}
+	.segment {
+		scroll-snap-align: start;
 	}
 	.introduction {
 		height: 100vh;

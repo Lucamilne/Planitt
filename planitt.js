@@ -14,31 +14,6 @@ const video = document.querySelector("video");
 if (!isMobile) {
     //enable the downloading of video
     video.src = "./img/freeuse/space.mp4";
-
-    //throttled scroll event
-    $(window).bind('wheel', _.debounce(function (event) {
-        if (event.originalEvent.wheelDelta >= 0) {
-            scrollUp();
-        } else {
-            scrollDown();
-        }
-    }, 600));
-
-    //the above, but for tablet devices with touchstart/touchend
-    let touchStart;
-
-    $(document).bind('touchstart', function (e) {
-        touchStart = e.originalEvent.touches[0].clientY;
-    });
-
-    $(document).bind('touchend', function (e) {
-        var touchEnd = e.originalEvent.changedTouches[0].clientY;
-        if (touchStart > touchEnd + 5) {
-            scrollDown();
-        } else if (touchStart < touchEnd - 5) {
-            scrollUp();
-        }
-    });
 }
 
 //lazy loading scripts
