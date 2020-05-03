@@ -86,6 +86,15 @@ function toggleMenuIcon() {
     $("#filter").fadeToggle("fast");
 }
 
+//terms and conditions
+$(".terms-btn").click(function() {
+    $("#terms").fadeIn();
+})
+
+$(".close").click(function() {
+    $("#terms").fadeOut();
+})
+
 //kitchen selector functionality for desktop only
 $(".product-styles button").click(function () {
     removeActiveClasses();

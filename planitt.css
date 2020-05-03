@@ -640,25 +640,58 @@ h1 span:nth-of-type(1) {
 	}
 }
 .introduction {
-	background-color: rgba(0, 0, 0, 0.5);
-	color: #fff;
-	padding-bottom: 144px;
+	height: 100vh;
 }
 .introduction .center {
 	display: flex;
 	width: 100%;
 	height: 100%;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-direction: column;
-	font-size: 18px;
-	letter-spacing: 1.5px;
-	line-height: 24px;
 }
 .introduction li {
-	width: 600px;
 	list-style-type: none;
 	text-align: center;
+	width: 280px;
+}
+h5 {
+	font-family: "Libre Baskerville", serif;
+	font-size: 24px;
+	font-weight: 100;
+}
+#terms {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #222;
+	display: none;
+}
+#terms p, #terms h3 {
+	margin-bottom: 32px;
+}
+#terms .content {
+	position: relative;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+	background-color: #eee;
+	overflow-y: scroll;
+	box-sizing: border-box;
+	padding: 56px;
+	border-radius: 12px;
+}
+.close {
+	position: absolute;
+	top: 32px;
+	right: 32px;
+	border-radius: 50%;
+	cursor: pointer;
+	border: none;
 }
 #contact-form-container {
 	position: fixed;
@@ -862,7 +895,17 @@ main {
 		scroll-snap-align: start;
 	}
 	.introduction {
-		height: 100vh;
+		color: #fff;
+		padding-bottom: 184px;
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+	.introduction .center {
+		font-size: 18px;
+		letter-spacing: 1.5px;
+		line-height: 24px;
+	}
+	.introduction li {
+		width: 600px;
 	}
 	.promo {
 		transform: translate(-50%, -50%) scale(1);
@@ -892,9 +935,8 @@ main {
 	footer {
 		grid-template-columns: minmax(260px, 1fr) 1.68fr;
 		grid-template-rows: none;
-		position: absolute;
-		bottom: 0;
 		width: 100%;
+		transform: translateY(-100%);
 	}
 	#title {
 		display: flex;
@@ -1000,6 +1042,9 @@ main {
 		grid-template-columns: repeat(6, 1fr);
 		grid-template-rows: repeat(5, 1fr);
 	}
+	.introduction {
+		padding-bottom: 144px;
+	}
 	.grid1 {
 		grid-area: 1 / 3 / 6 / 7;
 	}
@@ -1026,11 +1071,9 @@ main {
 		grid-area: 4 / 5 / 6 / 7;
 	}
 }
-
 .egger, .hettich, .made-in-britain {
 	width: 300px;
 }
-
 .hettich, .made-in-britain {
 	height: 175px;
 }
