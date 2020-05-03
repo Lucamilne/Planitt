@@ -34,7 +34,6 @@
     <link rel="stylesheet" href="./libs/swiper/css/swiper.min.css" />
     <link rel="stylesheet" type="text/css" href="./planitt.css" />
   </head>
-
   <body>
     <div id="landing-animation">
       <div class="roof"></div>
@@ -57,8 +56,8 @@
     </header>
     <nav>
       <ul class="links">
-        <li><a href="#service" id="about-nav">About</a></li>
-        <li><a href="#kitchens" id="gallery-nav">Gallery</a></li>
+        <li><a href="#service" id="about-nav">Service</a></li>
+        <li><a href="#kitchens" id="gallery-nav">Ranges</a></li>
         <li><a href="#process" id="process-nav">Process</a></li>
       </ul>
     </nav>
@@ -533,7 +532,10 @@
           </button>
           <div id="terms">
             <div class="content">
-              <h3>Terms & Conditions</h3>
+              <div class="terms__head">
+                <h3>Terms & Conditions</h3>
+                <button class="close fixed"><i class="far fa-times-circle"></i></button>
+              </div>
               <h5>General</h5>
               <hr />
               <p>
@@ -624,7 +626,9 @@
                 Company accepts no responsibility for the installation of your
                 kitchen.
               </p>
-              <button class="close" alt="close"><i class="far fa-times-circle"></i></button>
+              <div class="terms__foot">
+                <button class="rounded-btn close">Close</button>
+              </div>
             </div>
           </div>
         </div>
