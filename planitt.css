@@ -682,7 +682,7 @@ h5 {
 	background-color: #fff;
 	overflow-y: scroll;
 	box-sizing: border-box;
-	padding: 56px;
+	padding: 32px;
 	border-radius: 12px;
 	box-shadow: var(--box-shadow);
 }
@@ -923,6 +923,12 @@ main {
 	}
 	.introduction li {
 		width: 600px;
+	}
+	#terms h3 {
+		font-size: 30px;
+	}
+	#terms .content {
+		padding: 56px;
 	}
 	.promo {
 		transform: translate(-50%, -50%) scale(1);
