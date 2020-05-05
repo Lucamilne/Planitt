@@ -681,7 +681,7 @@ h1 span:nth-of-type(1) {
 	}
 }
 .introduction {
-	height: 150vh;
+	height: 100vh;
 }
 .introduction .center {
 	display: flex;
@@ -691,12 +691,21 @@ h1 span:nth-of-type(1) {
 	justify-content: space-around;
 	flex-direction: column;
 }
+.introduction__points {
+	width: 80%;
+	position: relative;
+	overflow: hidden;
+}
 .introduction li {
 	list-style-type: none;
 	text-align: center;
-	width: 280px;
-	font-size: 14px;
+	font-size: 18px;
 	line-height: 21px;
+	padding-bottom: 56px;
+}
+.introduction .swiper-pagination {
+	position: absolute;
+	bottom: 0;
 }
 h5 {
 	font-family: "Libre Baskerville", serif;
@@ -962,10 +971,9 @@ main {
 	.introduction .center {
 		font-size: 18px;
 		letter-spacing: 1.5px;
-		height: 100%;
 	}
-	.introduction li {
-		width: 600px;
+	.introduction__points {
+		width: 500px;
 	}
 	#terms h3 {
 		font-size: 30px;

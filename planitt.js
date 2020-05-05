@@ -229,9 +229,20 @@ var swiper = new Swiper('.carousel__track-container', {
 var swiper = new Swiper('.render-showcase__container', {
     spaceBetween: 12,
     grabCursor: true,
-    freeMode: true,
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
     },
 });
+
+var swiper = new Swiper(".introduction__points", {
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+      },
+    grabCursor: true,
+    autoplay: {
+        delay: 8000,
+        disableOnInteraction: false,
+    },
+})
