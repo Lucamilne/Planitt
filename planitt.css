@@ -309,6 +309,8 @@ section hr {
 	width: 56px;
 	border: 1px solid;
 	margin-top: 32px;
+	margin-inline-start: 0;
+    margin-inline-end: 0;
 }
 h3 {
 	font-family: "Libre Baskerville", serif;
