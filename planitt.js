@@ -53,37 +53,64 @@ function scrollTo(hash) {
 //toggle nav menu
 $(".branded-menu").click(function () {
     toggleNav();
+    toggleFilter();
 })
-
-//cancel nav menu if filter is clicked.
-$("#filter").click(function () {
-    toggleNav();
-}).fadeOut();
-
-function toggleMediaBar() {
-    $("#media-bar").fadeToggle();
-}
-
-function toggleNav() {
-    $("nav").toggleClass("toggle-nav");
-    invertHeader();
-    toggleMenuIcon();
-}
-
+//toggle contact form 
 $(".contact").click(function () {
-    $("#contact-form-container").toggleClass("toggle-nav")
-    toggleMediaBar()
+    toggleContactForm();
+    toggleFilter();
+    toggleMediaBar();
+})
+//close all menus if filter is clicked.
+$(".filter").click(function () {
+    $("nav").removeClass("toggle-nav")
+    $(".branded-menu").removeClass("invert").children("i").removeClass("fa-times").addClass("fa-bars")
+    $("header button").removeClass("invert-button")
+    $("#contact-form-container").removeClass("toggle-nav");
+
+    toggleFilter()
 })
 
-function invertHeader() {
-    $(".branded-menu").toggleClass("invert")
-    $("header button").toggleClass("invert-button")
+//opens and closes Nav bar depending on state (toggle-nav class = menu visible)
+function toggleNav() {
+    if ($("nav").hasClass("toggle-nav")) {
+        $("nav").removeClass("toggle-nav")
+    } else {
+        $("nav").addClass("toggle-nav")
+        $("#contact-form-container").removeClass("toggle-nav")
+    }
+
+    animateNav();
 }
 
-function toggleMenuIcon() {
-    $(".branded-menu i").toggleClass("fa-bars fa-times")
-    //toggles filter on menu dropdown
-    $("#filter").fadeToggle("fast");
+//opens and closes contact form depending on state (toggle-nav class = menu visible)
+function toggleContactForm() {
+    if ($("#contact-form-container").hasClass("toggle-nav")) {
+        $("#contact-form-container").removeClass("toggle-nav")
+    } else {
+        $("#contact-form-container").addClass("toggle-nav")
+        $("nav").removeClass("toggle-nav")
+        animateNav();
+    }
+}
+
+//enables a filter overlay on page if either nav bar or contact form is open
+function toggleFilter() {
+    if ($("nav").hasClass("toggle-nav") || $("#contact-form-container").hasClass("toggle-nav")) {
+        $(".filter").removeClass("is-hidden")
+    } else {
+        $(".filter").addClass("is-hidden")
+    }
+}
+
+function animateNav() {
+    if ($("nav").hasClass("toggle-nav")) {
+        $(".branded-menu").addClass("invert").children("i").removeClass("fa-bars").addClass("fa-times")
+        $("header button").addClass("invert-button")
+    } else {
+        $(".branded-menu").removeClass("invert").children("i").removeClass("fa-times").addClass("fa-bars")
+        $("header button").removeClass("invert-button")
+    }
 }
 
 //terms and conditions

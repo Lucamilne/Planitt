@@ -35,6 +35,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #eee;
+	font-family: "Montserrat", sans-serif;
+	transition: background-color 250ms ease;
 }
 ol, ul {
 	list-style: none;
@@ -74,11 +77,6 @@ html, body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-}
-body {
-	background-color: #eee;
-	font-family: "Montserrat", sans-serif;
-	transition: background-color 250ms ease;
 }
 main {
 	scroll-behavior: smooth;
@@ -251,13 +249,15 @@ nav {
 	transform: translate(0, -100%);
 	transition: transform 300ms ease;
 }
-#filter {
-	display: none;
+.filter {
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	z-index: 8;
 	background-color: rgba(0, 0, 0, 0.5)
+}
+.is-hidden {
+	display: none;
 }
 .invert {
 	color: #222;
@@ -989,9 +989,6 @@ main {
 	}
 	.desktop {
 		display: block;
-	}
-	.is-hidden {
-		display: none;
 	}
 	.carousel {
 		height: 100%;
