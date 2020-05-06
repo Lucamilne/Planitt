@@ -114,11 +114,11 @@ function animateNav() {
 }
 
 //terms and conditions
-$(".terms-btn").click(function() {
+$(".terms-btn").click(function () {
     $("#terms").fadeIn();
 })
 
-$(".close").click(function() {
+$(".close").click(function () {
     $("#terms").fadeOut();
 })
 
@@ -179,39 +179,6 @@ $(".contact-icon i").hover(function () {
     })
 })
 
-//scroll functions
-function scrollUp() {
-    let currentSegment = document.querySelector(".current-segment");
-    const prevSegment = currentSegment.previousElementSibling;
-
-    if (currentSegment.previousElementSibling === null) {
-        // if no prev element exists
-        return;
-    } else {
-        currentSegment.previousElementSibling.scrollIntoView();
-        updateCurrentSegment(currentSegment, prevSegment)
-    }
-}
-
-function scrollDown() {
-    let currentSegment = document.querySelector(".current-segment");
-    const nextSegment = currentSegment.nextElementSibling;
-    const footer = document.querySelector("footer");
-
-    if (currentSegment.nextElementSibling === null) {
-        //if no next element exists
-        return;
-    } else {
-        currentSegment.nextElementSibling.scrollIntoView();
-        updateCurrentSegment(currentSegment, nextSegment)
-    }
-}
-
-function updateCurrentSegment(currentSegment, targetSegment) {
-    currentSegment.classList.remove("current-segment");
-    targetSegment.classList.add("current-segment");
-}
-
 //carousel
 var swiper = new Swiper('.carousel__track-container', {
     spaceBetween: 12,
@@ -239,7 +206,12 @@ var swiper = new Swiper(".introduction__points", {
     pagination: {
         el: '.swiper-pagination',
         type: 'fraction',
-      },
+    },
+    effect: 'cube',
+    cubeEffect: {
+        shadow: false,
+        slideShadows: false,
+    },
     grabCursor: true,
     autoplay: {
         delay: 8000,
