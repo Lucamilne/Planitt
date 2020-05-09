@@ -363,7 +363,7 @@ section i {
 #book-consultation {
 	padding: 0;
 	width: 100%;
-	background-image: url("./img/freeuse/meet_400.jpg");
+	background-image: url("../public/img/freeuse/meet_400.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -431,16 +431,16 @@ section i {
 	border: 4px solid #eee;
 }
 #process .step:nth-of-type(1) {
-	background-image: url("./img/freeuse/consult_400.jpg");
+	background-image: url("../public/img/freeuse/consult_400.jpg");
 }
 #process .step:nth-of-type(2) {
-	background-image: url("./img/freeuse/design_400.jpg");
+	background-image: url("../public/img/freeuse/design_400.jpg");
 }
 #process .step:nth-of-type(3) {
-	background-image: url("./img/freeuse/build_400.jpg");
+	background-image: url("../public/img/freeuse/build_400.jpg");
 }
 #process .step:nth-of-type(4) {
-	background-image: url("./img/freeuse/warehouse_400.jpg");
+	background-image: url("../public/img/freeuse/warehouse_400.jpg");
 }
 .step-container {
 	position: absolute;
@@ -675,7 +675,7 @@ h1 span:nth-of-type(1) {
 	text-align: center;
 	font-size: 18px;
 	line-height: 21px;
-	padding: 56px 0;
+	padding: 10% 0;
 }
 .introduction .swiper-pagination {
 	position: absolute;
