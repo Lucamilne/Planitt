@@ -142,7 +142,7 @@ const mediaBar = document.getElementById("media-bar")
 
 const options = {
     threshold: 0,
-    rootMargin: "0px 0px -100px 0px"
+    rootMargin: "0px 0px -80px 0px"
 };
 
 const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
