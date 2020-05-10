@@ -859,6 +859,9 @@ h5 {
 #contact-form {
   width: 100%;
 }
+#contact-form label {
+  display: none;
+}
 .field {
   position: relative;
   color: rgba(255, 255, 255, 0.1);
