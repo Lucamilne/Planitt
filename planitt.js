@@ -61,6 +61,12 @@ $(".contact").click(function () {
     toggleFilter();
     toggleMediaBar();
 })
+
+$("#contact-form-container .close").click(function () {
+    toggleContactForm();
+    toggleFilter();
+})
+
 //close all menus if filter is clicked.
 $(".filter").click(function () {
     $("nav").removeClass("toggle-nav")
@@ -118,7 +124,7 @@ $(".terms-btn").click(function () {
     $("#terms").fadeIn();
 })
 
-$(".close").click(function () {
+$("#terms .close").click(function () {
     $("#terms").fadeOut();
 })
 
