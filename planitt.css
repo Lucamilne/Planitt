@@ -860,7 +860,8 @@ h5 {
   width: 100%;
 }
 #contact-form label {
-  display: none;
+  position: absolute;
+  opacity: 0;
 }
 .field {
   position: relative;

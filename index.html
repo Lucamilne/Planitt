@@ -699,17 +699,17 @@
       </div>
       <form action="https://formspree.io/mvowobzl" method="POST" id="contact-form">
         <div class="field">
-          <label>First Name</label>
+          <label for="fname">First Name</label>
           <input type="text" id="fname" name="fname" placeholder="First Name" required/>
           <span class="required">*</span>
         </div>
         <div class="field">
-          <label>Last Name</label>
+          <label for="lname">Last Name</label>
           <input type="text" id="lname" name="lname" placeholder="Last Name" required/>
           <span class="required">*</span>
         </div>
         <div class="field">
-          <label>Contact Number</label>
+          <label for="number">Contact Number</label>
           <input
             type="tel"
             id="number"
@@ -720,7 +720,7 @@
           <span class="required">*</span>
         </div>
         <div class="field">
-          <label>Email Address</label>
+          <label for="email">Email Address</label>
           <input
             type="email"
             id="email"
@@ -731,11 +731,12 @@
           <span class="required">*</span>
         </div>
         <div class="field">
-          <label>Your Message</label>
-          <textarea name="message" placeholder="Your Message"></textarea>
+          <label for="user-message">Your Message</label>
+          <textarea name="message" placeholder="Your Message" id="user-message"></textarea>
         </div>
         <div class="container">
-          <input type="submit" value="Submit" class="rounded-btn" />
+          <label for="form-submit">Submit</label>
+          <input type="submit" value="Submit" class="rounded-btn" id="form-submit"/>
         </div>
       </form>
     </div>
