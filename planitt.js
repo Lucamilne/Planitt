@@ -44,6 +44,7 @@ function revealMain(animationDuration) {
     $("#landing-animation").slideUp(animationDuration)
     $("main").animate({ opacity: 1 }, animationDuration)
     $(".promo").fadeIn(animationDuration);
+    $(".loading").hide();
 }
 
 function scrollTo(hash) {

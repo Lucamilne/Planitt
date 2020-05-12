@@ -193,17 +193,31 @@ main {
 .floor {
   position: relative;
   border: 1px solid #222;
+  background-color: red;
   opacity: 0;
-  width: 0%;
+  width: 0;
   animation: expand 1500ms forwards ease;
   animation-delay: 500ms;
 }
-.logo p {
+@keyframes expand {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    width: var(--logo-width)
+  }
+  100% {
+    opacity: 0;
+    width: var(--logo-width)
+  }
+}
+.logo p, .loading {
   font-family: "Yantramanav", serif;
   position: relative;
-  font-size: 2rem;
+  font-size: 32px;
   overflow: hidden;
-  line-height: 2rem;
+  line-height: 32px;
   margin: 0;
 }
 .logo p:nth-of-type(1) {
@@ -213,6 +227,14 @@ main {
 }
 .logo p:nth-of-type(2) {
   animation: slideLeft 2s forwards ease, slideDown forwards 2s ease;
+}
+.loading {
+  position: absolute;
+  font-size: 26px;
+  font-weight: bold;
+  opacity: 0;
+  animation: fade-in forwards ease 2s;
+  animation-delay: 3s;
 }
 @keyframes fade-in {
   from {
