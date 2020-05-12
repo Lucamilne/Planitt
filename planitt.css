@@ -196,8 +196,23 @@ main {
   background-color: red;
   opacity: 0;
   width: 0;
-  animation: expand 1500ms forwards ease;
-  animation-delay: 500ms;
+  -webkit-animation: expand 1500ms forwards ease;
+          animation: expand 1500ms forwards ease;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+@-webkit-keyframes expand {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    width: 100px;
+  }
+  90% {
+    opacity: 0;
+    width: 100px;
+  }
 }
 @keyframes expand {
   from {
@@ -205,11 +220,11 @@ main {
   }
   50% {
     opacity: 1;
-    width: var(--logo-width)
+    width: 100px;
   }
   90% {
     opacity: 0;
-    width: var(--logo-width);
+    width: 100px;
   }
 }
 .logo p, .loading {
@@ -1068,7 +1083,8 @@ main {
 @media screen and (min-width: 768px) {
   main {
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    -ms-scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory;
   }
   .segment {
     scroll-snap-align: start;
