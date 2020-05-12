@@ -209,7 +209,7 @@ main {
   }
   90% {
     opacity: 0;
-    width: var(--logo-width)
+    width: var(--logo-width);
   }
 }
 .logo p, .loading {
