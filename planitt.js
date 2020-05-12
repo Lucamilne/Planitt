@@ -10,12 +10,6 @@ if (document.documentElement.clientWidth < 768) {
 
 const video = document.querySelector("video");
 
-//if mobile don't run scripts
-if (!isMobile) {
-    //enable the downloading of video
-    video.src = "./img/freeuse/space.mp4";
-}
-
 //lazy loading scripts
 var lazyLoadInstance = new LazyLoad({
     threshold: "500",
