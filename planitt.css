@@ -207,7 +207,7 @@ main {
     opacity: 1;
     width: var(--logo-width)
   }
-  100% {
+  90% {
     opacity: 0;
     width: var(--logo-width)
   }
