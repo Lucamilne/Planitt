@@ -1164,9 +1164,6 @@ main {
   .our-service p:nth-of-type(2) {
     display: none;
   }
-  .our-service h3 {
-    margin-bottom: 32px;
-  }
   .grid4 {
     grid-area: 1 / 1 / 5 / 6;
     display: inline-block;
