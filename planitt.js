@@ -54,7 +54,6 @@ $(".branded-menu").click(function () {
 $(".contact").click(function () {
     toggleContactForm();
     toggleFilter();
-    toggleMediaBar();
 })
 
 $("#contact-form-container .close").click(function () {
