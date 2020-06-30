@@ -41,10 +41,6 @@ function revealMain(animationDuration) {
     $(".loading").hide();
 }
 
-function scrollTo(hash) {
-    document.getElementById(`${hash}`).scrollIntoView();
-}
-
 //toggle nav menu
 $(".branded-menu").click(function () {
     toggleNav();
